@@ -1,0 +1,2 @@
+#define MAX_LOGIN_ATTEMPTS 3
+#define WEAPON_FIST 0
