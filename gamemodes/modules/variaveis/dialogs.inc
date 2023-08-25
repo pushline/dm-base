@@ -14,7 +14,7 @@ public LOGIN(playerid, dialogid, response, listitem, string:inputtext[])
 			if(rows)
 			{
 				cache_get_value_name(0, "password", passwordHash, BCRYPT_HASH_LENGTH);
-				bcrypt_verify(playerid, "OnLoginVerify", inputtext, password);
+				bcrypt_verify(playerid, "OnLoginVerify", inputtext, passwordHash);
 			}
 
 			cache_delete(select);
@@ -45,7 +45,7 @@ public OnLoginVerify(playerid, bool:success)
 		va_SendClientMessage(playerid, -1, LOGIN_MSG3, planeString);
 
 		User[playerid][isLogged] = true;
-		SetPlayerColor(0x7ea39eFF);
+		SetPlayerColor(playerid, 0x7ea39eFF);
  	}
  	else{
  		showLoginDialog(playerid);
@@ -74,8 +74,8 @@ public REGISTER(playerid, dialogid, response, listitem, string:inputtext[])
 forward OnRegisterHash(playerid, accountname[]);
 public OnRegisterHash(playerid, accountname[])
 {
-  new passwordHash[BCRYPT_HASH_LENGTH];
-  bcrypt_get_hash(passwordHash);
+	new passwordHash[BCRYPT_HASH_LENGTH];
+	bcrypt_get_hash(passwordHash);
 
 	new pip[18];
 	GetPlayerIp(playerid, pip, 18);
@@ -93,7 +93,7 @@ public OnRegisterHash(playerid, accountname[])
 	User[playerid][isLogged] = true;
 	User[playerid][playerMoney] += 5000;
 	GivePlayerMoney(playerid, User[playerid][playerMoney]);
-	SetPlayerColor(0x7ea39eFF);
+	SetPlayerColor(playerid, 0x7ea39eFF);
 
 	return true;
 }

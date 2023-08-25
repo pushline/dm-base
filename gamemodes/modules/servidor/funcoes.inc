@@ -13,11 +13,11 @@ public KickPlayerEx(playerid){
 	Kick(playerid);
 }
 
-IsValidPassword(const password[])
+IsValidPassword(const inputpassword[])
 {
-	for(new i = 0; password[i] != EOS; ++i)
+	for(new i = 0; inputpassword[i] != EOS; ++i)
 	{
-		switch(password[i])
+		switch(inputpassword[i])
 		{
 			case '0'..'9', 'A'..'Z', 'a'..'z': continue;
 			default: return 0;
