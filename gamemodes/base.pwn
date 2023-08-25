@@ -22,8 +22,10 @@
 #include <a_zone> // https://github.com/pushline/Advanced-Gang-Zones
 
 // modulos
-#include "modules/variaveis/global.inc"
 #include "modules/variaveis/defines.inc"
+#include "modules/variaveis/messages.inc"
+#include "modules/variaveis/global.inc"
+#include "modules/variaveis/dialogs.inc"
 
 #include "modules/servidor/db.inc"
 #include "modules/servidor/funcoes.inc"
@@ -52,15 +54,18 @@ public OnPlayerConnect(playerid)
 {
 	if(!IsPlayerNPC(playerid))
 	{
+		resetPVars(playerid);
+
 		GetPlayerIp(playerid, User[playerid][lastip], 18);
 		GetPlayerName(playerid, User[playerid][userName], MAX_PLAYER_NAME + 1);
+
 		PreloadAnims(playerid);
 		SetPlayerVirtualWorld(playerid, playerid);
 		SetSpawnInfo(playerid, 0, 1, 0, 0, 0, 0, WEAPON_FIST, 0, WEAPON_FIST, 0, WEAPON_FIST, 0);
 
-		mysql_format(dbHandle, queryGlobal, sizeof(queryGlobal),
+		mysql_format(conexaoDB, queryGlobal, sizeof(queryGlobal),
 			"SELECT * FROM `banimentos` WHERE `username` = '%e' OR `ip` = '%e'", User[playerid][userName], User[playerid][lastip]);
-		mysql_tquery(dbHandle, queryGlobal, "VerifyBan", "d", playerid);
+		mysql_tquery(conexaoDB, queryGlobal, "VerifyBan", "d", playerid);
 	}
 
 	return true;

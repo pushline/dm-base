@@ -38,14 +38,14 @@ public VerifyBan(playerid)
 		{
 			new Cache:delete;
 
-			mysql_format(dbHandle, queryGlobal, sizeof queryGlobal, "DELETE FROM `banimentos` where `username` = '%e' LIMIT 1", usernamee);
-			delete = mysql_query(dbHandle, queryGlobal);
+			mysql_format(conexaoDB, queryGlobal, sizeof queryGlobal, "DELETE FROM `banimentos` where `username` = '%e' LIMIT 1", usernamee);
+			delete = mysql_query(conexaoDB, queryGlobal);
 			cache_delete(delete);
 
-			mysql_format(dbHandle, queryGlobal, sizeof(queryGlobal),
+			mysql_format(conexaoDB, queryGlobal, sizeof(queryGlobal),
 				"SELECT * FROM `contas` WHERE `username` = '%e'", User[playerid][userName]);
 
-			mysql_tquery(dbHandle, queryGlobal, "OnPlayerJoin", "d", playerid);
+			mysql_tquery(conexaoDB, queryGlobal, "OnPlayerJoin", "d", playerid);
 		}
 		else{
 			new banTS[50], unbanTS[50];
@@ -65,10 +65,10 @@ public VerifyBan(playerid)
 	}
 	else
 	{
-		mysql_format(dbHandle, queryGlobal, sizeof(queryGlobal),
+		mysql_format(conexaoDB, queryGlobal, sizeof(queryGlobal),
 			"SELECT * FROM `contas` WHERE `username` = '%e'", User[playerid][userName]);
 
-		mysql_tquery(dbHandle, queryGlobal, "OnPlayerJoin", "d", playerid);
+		mysql_tquery(conexaoDB, queryGlobal, "OnPlayerJoin", "d", playerid);
 	}
 
 	return true;
@@ -81,8 +81,8 @@ public OnPlayerJoin(playerid)
 	if(rows)
 	{
 		cache_get_value_int(0, "id", User[playerid][user_sqlid]);
-		cache_get_value_name(0, "password", User[playerid][user_pass], BCRYPT_HASH_LENGTH);
-		cache_get_value_name(0, "regip", User[playerid][user_regip], 18);
+		cache_get_value_name(0, "password", User[playerid][password], BCRYPT_HASH_LENGTH);
+		cache_get_value_name(0, "regip", User[playerid][registerip], 18);
 		cache_get_value_int(0, "kills", User[playerid][playerKills]);
 		cache_get_value_int(0, "deaths", User[playerid][playerDeaths]);
 		cache_get_value_int(0, "skin", User[playerid][playerSkin]);
