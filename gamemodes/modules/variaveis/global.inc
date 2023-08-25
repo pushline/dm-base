@@ -1,18 +1,17 @@
 new MySQL:conexaoDB;
+new queryGlobal[2000];
 
 enum e_USER
 {
     sqlID,
+    userName[MAX_PLAYER_NAME + 1],
     password[64 + 1],
     registerip[18],
     lastip[18],
     FPS,
     dLlast,
-    userName[MAX_PLAYER_NAME + 1],
     playerKills,
     playerDeaths,
-    playerExp,
-    playerLevel,
     playerSkin,
     adminLevel,
     playerMoney,
@@ -23,3 +22,12 @@ enum e_USER
 };
 
 new User[MAX_PLAYERS][e_USER];
+
+new adminnames[6][] =
+{
+    {"{7ea39e}Player Normal"},
+	{"{5b8012}Ajudante",},
+	{"{5a24ab}Moderador"},
+	{"{b55f09}Administrador"},
+	{"{0517e6}Fundador"}
+};

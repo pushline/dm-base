@@ -1,0 +1,22 @@
+name: Pawn Compile
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  compilepawn:
+    runs-on: ubuntu-latest
+    container: cxdur/pawn-compiler:3.10.10
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Compile
+        run: pawncc /__w/dm-base/dm-base/gamemodes/base.pwn -D/__w/dm-base/dm-base/gamemodes -i/__w/dm-base/dm-base/pawno/include -d3 -Z+ -\;+
+     - name: Upload AMX
+        uses: actions/upload-artifact@v1
+        with:
+          name: base.amx
+          path: gamemodes/base.amx

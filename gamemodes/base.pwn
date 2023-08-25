@@ -57,6 +57,10 @@ public OnPlayerConnect(playerid)
 		PreloadAnims(playerid);
 		SetPlayerVirtualWorld(playerid, playerid);
 		SetSpawnInfo(playerid, 0, 1, 0, 0, 0, 0, WEAPON_FIST, 0, WEAPON_FIST, 0, WEAPON_FIST, 0);
+
+		mysql_format(dbHandle, queryGlobal, sizeof(queryGlobal),
+			"SELECT * FROM `banimentos` WHERE `username` = '%e' OR `ip` = '%e'", User[playerid][userName], User[playerid][lastip]);
+		mysql_tquery(dbHandle, queryGlobal, "VerifyBan", "d", playerid);
 	}
 
 	return true;
