@@ -25,9 +25,9 @@ new User[MAX_PLAYERS][e_USER];
 
 new adminnames[6][] =
 {
-    {"{7ea39e}Player Normal"},
-	{"{5b8012}Ajudante",},
-	{"{5a24ab}Moderador"},
-	{"{b55f09}Administrador"},
-	{"{0517e6}Fundador"}
+    "{7ea39e}Player Normal",
+	"{5b8012}Ajudante",
+	"{5a24ab}Moderador",
+	"{b55f09}Administrador",
+	"{0517e6}Fundador"
 };

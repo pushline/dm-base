@@ -35,8 +35,8 @@ main(){
 public OnGameModeInit()
 {
   DisableCrashDetectLongCall();
-  Command_SetDeniedReturn(true); // Prevenir mensagem "Unknown Command do ycmd"
-  mysql_log(ALL);
+  Command_SetDeniedReturn(true); // Prevenir mensagem "Unknown Command" do ycmd
+  mysql_log(ERROR);
   ligarDB();
 
   return true;
@@ -68,8 +68,6 @@ public OnPlayerConnect(playerid)
 
 public OnPlayerDisconnect(playerid, reason)
 {
-	new szString[64], name[25];
-
 	new szDisconnectReason[5][] =
 	{
 		"Timeout/Crash",
@@ -79,9 +77,7 @@ public OnPlayerDisconnect(playerid, reason)
 		"Mode End"
 	};
 
-	GetPlayerName(playerid, name, sizeof(name));
-	format(szString, sizeof szString, "%s left the server (%s).", name, szDisconnectReason[reason]);
-	SendClientMessageToAll(0xC4C4C4FF, szString);
+	va_SendClientMessageToAll(0xC4C4C4FF, "%s left the server (%s).", User[playerid][userName], szDisconnectReason[reason]);
 
 	return true;
 }
