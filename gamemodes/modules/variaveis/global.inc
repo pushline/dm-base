@@ -23,7 +23,7 @@ enum e_USER
 
 new User[MAX_PLAYERS][e_USER];
 
-new adminnames[6][] =
+new adminnames[5][] =
 {
     "{7ea39e}Player Normal",
 	"{5b8012}Ajudante",
