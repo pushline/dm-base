@@ -80,7 +80,7 @@ public OnPlayerJoin(playerid)
 	new rows = cache_num_rows();
 	if(rows)
 	{
-		cache_get_value_int(0, "id", User[playerid][user_sqlid]);
+		cache_get_value_int(0, "id", User[playerid][sqlID]);
 		cache_get_value_name(0, "password", User[playerid][password], BCRYPT_HASH_LENGTH);
 		cache_get_value_name(0, "regip", User[playerid][registerip], 18);
 		cache_get_value_int(0, "kills", User[playerid][playerKills]);

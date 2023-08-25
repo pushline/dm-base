@@ -3,17 +3,17 @@ public LOGIN(playerid, dialogid, response, listitem, string:inputtext[])
 {
 	if (response)
 	{
-		if(strlen(inputtext) != NULL)
+		if(strlen(inputtext) != 0)
 		{
-			new Cache:select, password[BCRYPT_HASH_LENGTH];
+			new Cache:select, passwordHash[BCRYPT_HASH_LENGTH];
 
-			mysql_format(dbHandle, queryGlobal, sizeof(queryGlobal), "SELECT `password` FROM `contas` WHERE `username` = '%e' LIMIT 1", User[playerid][userName]);
-			select = mysql_query(dbHandle, queryGlobal);
+			mysql_format(conexaoDB, queryGlobal, sizeof(queryGlobal), "SELECT `password` FROM `contas` WHERE `username` = '%e' LIMIT 1", User[playerid][userName]);
+			select = mysql_query(conexaoDB, queryGlobal);
 
 			new rows = cache_num_rows();
 			if(rows)
 			{
-				cache_get_value_name(0, "password", password, BCRYPT_HASH_LENGTH);
+				cache_get_value_name(0, "password", passwordHash, BCRYPT_HASH_LENGTH);
 				bcrypt_verify(playerid, "OnLoginVerify", inputtext, password);
 			}
 
@@ -21,7 +21,7 @@ public LOGIN(playerid, dialogid, response, listitem, string:inputtext[])
 			return true;
 		}
 
-		showAutorizationDialog(playerid);
+		showLoginDialog(playerid);
 		return true;
 	}
 
@@ -45,10 +45,10 @@ public OnLoginVerify(playerid, bool:success)
 		va_SendClientMessage(playerid, -1, LOGIN_MSG3, planeString);
 
 		User[playerid][isLogged] = true;
-    SetPlayerColor(0x7ea39eFF);
+		SetPlayerColor(0x7ea39eFF);
  	}
  	else{
- 		showAutorizationDialog(playerid);
+ 		showLoginDialog(playerid);
  	}
 	return true;
 }
@@ -74,27 +74,26 @@ public REGISTER(playerid, dialogid, response, listitem, string:inputtext[])
 forward OnRegisterHash(playerid, accountname[]);
 public OnRegisterHash(playerid, accountname[])
 {
-  new password[BCRYPT_HASH_LENGTH];
-  bcrypt_get_hash(password);
+  new passwordHash[BCRYPT_HASH_LENGTH];
+  bcrypt_get_hash(passwordHash);
 
-	new stringQ[512], pip[18];
+	new pip[18];
 	GetPlayerIp(playerid, pip, 18);
-	format(User[playerid][user_gpci], 41, ReturnCI(playerid));
 
-	mysql_format(dbHandle, queryGlobal, sizeof(queryGlobal),
+	mysql_format(conexaoDB, queryGlobal, sizeof(queryGlobal),
 		"INSERT INTO `contas`(`username`, `regip`, `password`) VALUES('%e', '%e', '%e')",
-		User[playerid][userName], pip, password);
+		User[playerid][userName], pip, passwordHash);
 
-	mysql_tquery(dbHandle, queryGlobal , "InsertDataSQL", "i", playerid);
+	mysql_tquery(conexaoDB, queryGlobal , "InsertDataSQL", "i", playerid);
 
-	va_SendClientMessage(playerid, COLOR_GREEN, REGISTRO_MSG, User[playerid][userName]);
-  va_SendClientMessageToAll(0xC4C4C4FF, "%s has joined the server.", User[playerid][userName]);
+	va_SendClientMessage(playerid, 0x4cbd1cFF, REGISTRO_MSG, User[playerid][userName]);
+	va_SendClientMessageToAll(0xC4C4C4FF, "%s has joined the server.", User[playerid][userName]);
 
-	format(User[playerid][user_lastip], 18, pip);
+	format(User[playerid][lastip], 18, pip);
 	User[playerid][isLogged] = true;
 	User[playerid][playerMoney] += 5000;
-  GivePlayerMoney(playerid, User[playerid][playerMoney]);
-  SetPlayerColor(0x7ea39eFF);
+	GivePlayerMoney(playerid, User[playerid][playerMoney]);
+	SetPlayerColor(0x7ea39eFF);
 
 	return true;
 }
@@ -102,5 +101,5 @@ public OnRegisterHash(playerid, accountname[])
 forward InsertDataSQL(playerid);
 public InsertDataSQL(playerid)
 {
-    User[playerid][user_sqlid] = cache_insert_id();
+    User[playerid][sqlID] = cache_insert_id();
 }

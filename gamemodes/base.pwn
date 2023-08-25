@@ -54,7 +54,7 @@ public OnPlayerConnect(playerid)
 {
 	if(!IsPlayerNPC(playerid))
 	{
-		resetPVars(playerid);
+		resetPvars(playerid);
 
 		GetPlayerIp(playerid, User[playerid][lastip], 18);
 		GetPlayerName(playerid, User[playerid][userName], MAX_PLAYER_NAME + 1);

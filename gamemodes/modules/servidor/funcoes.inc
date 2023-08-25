@@ -13,6 +13,19 @@ public KickPlayerEx(playerid){
 	Kick(playerid);
 }
 
+IsValidPassword(const password[])
+{
+	for(new i = 0; password[i] != EOS; ++i)
+	{
+		switch(password[i])
+		{
+			case '0'..'9', 'A'..'Z', 'a'..'z': continue;
+			default: return 0;
+		}
+	}
+	return 1;
+}
+
 // resetar variaveis
 resetPvars(playerid)
 {

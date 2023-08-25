@@ -7,4 +7,4 @@
 
 #define LOGIN_MSG1	">> Bem vindo novamente, {6B54B6}%s!"
 #define LOGIN_MSG2	">> Seu nível admin é: %s."
-#define LOGIN_MSG4	">> Seu último login foi em: %s."
+#define LOGIN_MSG3	">> Seu último login foi em: %s."
