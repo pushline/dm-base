@@ -46,8 +46,13 @@ public OnLoginVerify(playerid, bool:success)
 
 		User[playerid][isLogged] = true;
 		SetPlayerColor(playerid, 0x7ea39eFF);
+
+		SpawnPlayer(playerid);
+		SetPlayerSkin(playerid, User[playerid][playerSkin]);
+		SetPVarInt(playerid, "firstSpawn", 1);
  	}
- 	else{
+ 	else
+	{
  		showLoginDialog(playerid);
  	}
 	return true;
@@ -63,6 +68,8 @@ public REGISTER(playerid, dialogid, response, listitem, string:inputtext[])
 			bcrypt_hash(playerid, "OnRegisterHash", inputtext, BCRYPT_COST);
 			return true;
 		}
+
+		SendClientMessage(playerid, -1, "Senha inválida");
 		showRegistrationDialog(playerid);
 		return true;
 	}
@@ -94,6 +101,8 @@ public OnRegisterHash(playerid, accountname[])
 	User[playerid][playerMoney] += 5000;
 	GivePlayerMoney(playerid, User[playerid][playerMoney]);
 	SetPlayerColor(playerid, 0x7ea39eFF);
+	SpawnPlayer(playerid);
+	SetPVarInt(playerid, "firstSpawn", 1);
 
 	return true;
 }

@@ -1,6 +1,6 @@
-#define MYSQL_HOST "host.docker.internal"
+#define MYSQL_HOST "localhost"
 #define MYSQL_USER "root"
-#define MYSQL_PASS "123456"
+#define MYSQL_PASS ""
 #define MYSQL_DB "dmbase"
 
 ligarDB()
@@ -47,7 +47,8 @@ public VerifyBan(playerid)
 
 			mysql_tquery(conexaoDB, queryGlobal, "OnPlayerJoin", "d", playerid);
 		}
-		else{
+		else
+		{
 			new banTS[50], unbanTS[50];
 			strcopy(banTS, returnDate(bantimestamp-10800), sizeof(banTS));
 			strcopy(unbanTS, returnDate(unbantimestamp-10800), sizeof(unbanTS));
@@ -91,7 +92,7 @@ public OnPlayerJoin(playerid)
 		cache_get_value_int(0, "lastlogin", User[playerid][lastLogin]);
 
 		if(User[playerid][lastLogin] == 0)
-			User[playerid][lastLogin] = 1000198120;
+			User[playerid][lastLogin] = gettime();
 
 		showLoginDialog(playerid);
 		va_SendClientMessageToAll(0xC4C4C4FF, "%s has joined the server.", User[playerid][userName]);

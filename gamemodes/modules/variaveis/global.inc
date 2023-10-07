@@ -21,7 +21,7 @@ enum e_USER
     bool:isAfk,
 };
 
-new User[MAX_PLAYERS][e_USER];
+new User[MAX_PLAYERS + 1][e_USER];
 
 new adminnames[5][] =
 {
@@ -30,4 +30,31 @@ new adminnames[5][] =
 	"{5a24ab}Moderador",
 	"{b55f09}Administrador",
 	"{0517e6}Fundador"
+};
+
+//Arena
+enum Arena
+{
+	arenaId,
+	roundMints,
+	totalArenaKills
+}
+
+new arenaInfo[Arena];
+
+enum playerArena
+{
+    Float:arenaDMG,
+    Float:shotsAccuracy,
+    firedShots,
+    hitedShots,
+    arenaKills,
+    arenaDeaths
+}
+
+new playerArenaInfo[MAX_PLAYERS][playerArena];
+
+enum arenaa{
+	arenaName[30],
+	Float:arenaPos[4]
 };

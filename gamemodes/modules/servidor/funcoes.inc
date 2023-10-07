@@ -1,3 +1,89 @@
+initArena()
+{
+	arenaInfo[roundMints] = ROUND_TIME;
+	arenaInfo[arenaId] = random(MAX_ZONES);
+
+	return true;
+}
+
+iniciarServidor()
+{
+	initArena();
+
+	SetNameTagDrawDistance(40.0);
+	SetGameModeText(gamemodeName);
+
+	DisableInteriorEnterExits();
+	UsePlayerPedAnims();
+	EnableStuntBonusForAll(false);
+	SetDisableSyncBugs(true);
+	SetTimer("OnScriptUpdate", 1000, true);
+	SetWeaponDamage(WEAPON_SNIPER, DAMAGE_TYPE_STATIC, 40.0);
+	gmtextdraws();
+	createZones();
+}
+
+forward OnScriptUpdate();
+public OnScriptUpdate()
+{
+	new strm[256];
+
+	if(arenaInfo[isRunningArena])
+	{
+		arenaInfo[roundMints]--;
+
+		if(arenaInfo[roundMints] < 0)
+		{
+			new nextArena = determineArenaID();
+
+			foreach(new p : Player)
+			{
+				if(User[p][locationId] != i)
+					continue;
+
+				format(strm, sizeof(strm), ARENA_ENDED_MSG,
+							arenaData[arenaInfo[arenaId]][arenaName], arenaInfo[arenaId],	arenaData[nextArena][arenaName], nextArena);
+				SendClientMessage(p, -1, strm);
+
+				ZoneNumberStopFlashForAll(arenaInfo[arenaId]);
+			}
+
+			GetRoundRank(i);
+			arenaInfo[arenaId] = nextArena;
+			PrepareChangeArena(i);
+		}
+	}
+
+	foreach(new i : Player)
+	{
+		updatePlayerHud(i);
+
+		new drunk2 = GetPlayerDrunkLevel(i);
+		if(drunk2 < 100)
+		{
+			SetPlayerDrunkLevel(i, 2000);
+		}
+		else
+		{
+			if(User[i][dLlast] != drunk2)
+			{
+				new fps = User[i][dLlast] - drunk2;
+
+				if(fps > 0 && fps < 450)
+					User[i][FPS] = fps;
+
+				User[i][dLlast] = drunk2;
+			}
+		}
+
+		if((GetPlayerWeapon(i) == WEAPON_SAWEDOFF || GetPlayerWeapon(i) == WEAPON_ROCKETLAUNCHER || GetPlayerWeapon(i) == WEAPON_MINIGUN) && User[i][isAfk] == false)
+		{
+			KickEx(i, 300);
+		}
+	}
+	return true;
+}
+
 stock PreloadAnims(playerid)
 {
 	ApplyAnimation(playerid, "ped", "null", 0.0, 0, 0, 0, 0, 0);
@@ -26,23 +112,6 @@ IsValidPassword(const inputpassword[])
 	return 1;
 }
 
-// resetar variaveis
-resetPvars(playerid)
-{
-	User[playerid][sqlID] = 0;
-	User[playerid][userName] = '\0';
-	User[playerid][password] = '\0';
-	User[playerid][registerip] = '\0';
-	User[playerid][lastip] = '\0';
-	User[playerid][playerKills] = 0;
-	User[playerid][playerDeaths] = 0;
-	User[playerid][playerMoney] = 0;
-	User[playerid][playerSkin] = 0;
-	User[playerid][adminLevel] = 0;
-	User[playerid][isLogged] = false;
-	User[playerid][isAfk] = false;
-}
-
 // podes usar pawn chrono se quiser tbm.
 returnDate(timestamp, _form=0 )
 {
@@ -53,9 +122,9 @@ returnDate(timestamp, _form=0 )
 	new returnstring[32];
 
 	while(timestamp>31622400){
-			timestamp -= 31536000;
-			if ( ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0) ) timestamp -= 86400;
-			year++;
+		timestamp -= 31536000;
+		if ( ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0) ) timestamp -= 86400;
+		year++;
 	}
 
 	if ( ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0) )
@@ -85,4 +154,14 @@ returnDate(timestamp, _form=0 )
 	}
 
 	return returnstring;
+}
+
+setAfk(playerid)
+{
+
+}
+
+Respawn(playerid)
+{
+
 }
