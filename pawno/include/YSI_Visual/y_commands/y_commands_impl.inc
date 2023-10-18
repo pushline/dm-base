@@ -1,19 +1,19 @@
 /*
 Legal:
 	Version: MPL 1.1
-	
-	The contents of this file are subject to the Mozilla Public License Version 
-	1.1 the "License"; you may not use this file except in compliance with 
-	the License. You may obtain a copy of the License at 
+
+	The contents of this file are subject to the Mozilla Public License Version
+	1.1 the "License"; you may not use this file except in compliance with
+	the License. You may obtain a copy of the License at
 	http://www.mozilla.org/MPL/
-	
+
 	Software distributed under the License is distributed on an "AS IS" basis,
 	WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
 	for the specific language governing rights and limitations under the
 	License.
-	
+
 	The Original Code is the YSI framework.
-	
+
 	The Initial Developer of the Original Code is Alex "Y_Less" Cole.
 	Portions created by the Initial Developer are Copyright (c) 2022
 	the Initial Developer. All Rights Reserved.
@@ -73,16 +73,16 @@ Optional plugins:
 
 /*
 
-     ad88888ba                                              
-    d8"     "8b              ,d                             
-    Y8,                      88                             
-    `Y8aaaaa,    ,adPPYba, MM88MMM 88       88 8b,dPPYba,   
-      `"""""8b, a8P_____88   88    88       88 88P'    "8a  
-            `8b 8PP"""""""   88    88       88 88       d8  
-    Y8a     a8P "8b,   ,aa   88,   "8a,   ,a88 88b,   ,a8"  
-     "Y88888P"   `"Ybbd8"'   "Y888  `"YbbdP'Y8 88`YbbdP"'   
-                                               88           
-                                               88           
+     ad88888ba
+    d8"     "8b              ,d
+    Y8,                      88
+    `Y8aaaaa,    ,adPPYba, MM88MMM 88       88 8b,dPPYba,
+      `"""""8b, a8P_____88   88    88       88 88P'    "8a
+            `8b 8PP"""""""   88    88       88 88       d8
+    Y8a     a8P "8b,   ,aa   88,   "8a,   ,a88 88b,   ,a8"
+     "Y88888P"   `"Ybbd8"'   "Y888  `"YbbdP'Y8 88`YbbdP"'
+                                               88
+                                               88
 
 */
 
@@ -117,7 +117,7 @@ enum e_COMMAND_FLAGS
 	e_COMMAND_FLAG_TYPE_PTR = 0x800000,
 	e_COMMAND_FLAG_TYPE_STR = 0x400000,
 	e_COMMAND_FLAG_TYPE_NRM = 0x000000,
-	
+
 	// If this is set this is a function that only takes a single string
 	// parameter, and is an inline in the current script.  We do this so that we
 	// can call that code way more directly, or at least slightly more directly,
@@ -148,14 +148,14 @@ enum e_COMMAND_FLAGS
 enum E_COMMAND
 {
 	// HASH_MAP_DATA<MAX_COMMAND_LENGTH char>,
-	
+
 	// Share a memory location with the hashmap stored name.
 	E_COMMAND_NAME[MAX_COMMAND_LENGTH char] = 0,
-	
+
 	// IGNORE THESE, THEY COVER HASH MAP DATA.
 	E_COMMAND_HASH_MAP[HASH_MAP_DATA],
 	// _E_COMMAND_PAD_0, _E_COMMAND_PAD_1,
-	
+
 	// Who can use this command?  For inlines, the players currently with one.
 	PlayerArray:E_COMMAND_USERS<MAX_PLAYERS>,
 	// Meta-data.
@@ -227,7 +227,7 @@ static stock
 	// These two MUST be adjacent in memory.
 	YSI_g_sCommandPrefix[4] = { '@', 'y', 'C', '_' },
 	YSI_g_sCommandName[60],
-	Iterator:YSI_g_sPlayerCommands<MAX_PLAYERS, MAX_COMMANDS>;
+	Iterator:YSIg_sPlayerCommands<MAX_PLAYERS, MAX_COMMANDS>;
 
 static stock __declspec(dist_master) YSI_g_sCommands[MAX_COMMANDS][E_COMMAND];
 static stock __declspec(dist_master) YSI_g_sInlineCommands[MAX_COMMANDS][E_COMMAND_INLINE];
@@ -291,19 +291,19 @@ native Command_FuncIDX(func) = funcidx;
 #define @C_y0000%0\32; @C_y0000
 
 // Forwards for optional command callbacks.
-forward e_COMMAND_ERRORS:OnPlayerCommandReceived(playerid, cmdtext[], e_COMMAND_ERRORS:success); 
-forward e_COMMAND_ERRORS:OnPlayerCommandPerformed(playerid, cmdtext[], e_COMMAND_ERRORS:success); 
+forward e_COMMAND_ERRORS:OnPlayerCommandReceived(playerid, cmdtext[], e_COMMAND_ERRORS:success);
+forward e_COMMAND_ERRORS:OnPlayerCommandPerformed(playerid, cmdtext[], e_COMMAND_ERRORS:success);
 
 /*
 
-    88b           d88                                                         
-    888b         d888                                                         
-    88`8b       d8'88                                                         
-    88 `8b     d8' 88 ,adPPYYba,  ,adPPYba, 8b,dPPYba,  ,adPPYba,  ,adPPYba,  
-    88  `8b   d8'  88 ""     `Y8 a8"     "" 88P'   "Y8 a8"     "8a I8[    ""  
-    88   `8b d8'   88 ,adPPPPP88 8b         88         8b       d8  `"Y8ba,   
-    88    `888'    88 88,    ,88 "8a,   ,aa 88         "8a,   ,a8" aa    ]8I  
-    88     `8'     88 `"8bbdP"Y8  `"Ybbd8"' 88          `"YbbdP"'  `"YbbdP"'  
+    88b           d88
+    888b         d888
+    88`8b       d8'88
+    88 `8b     d8' 88 ,adPPYYba,  ,adPPYba, 8b,dPPYba,  ,adPPYba,  ,adPPYba,
+    88  `8b   d8'  88 ""     `Y8 a8"     "" 88P'   "Y8 a8"     "8a I8[    ""
+    88   `8b d8'   88 ,adPPPPP88 8b         88         8b       d8  `"Y8ba,
+    88    `888'    88 88,    ,88 "8a,   ,aa 88         "8a,   ,a8" aa    ]8I
+    88     `8'     88 `"8bbdP"Y8  `"Ybbd8"' 88          `"YbbdP"'  `"YbbdP"'
 
 */
 
@@ -347,9 +347,9 @@ FUNC_PAWNDOC(bool:_Command_IsAlt(idx));
 
 #define Command_ErrorRet(%2) (YSI_g_sSystemSettings&e_SYSTEM_SETTINGS:(1<<_:(%2)-1))
 #if defined COMMAND_USE_ERRORS
-	
+
 	#define Command_ErrorMsg(%2) YSI_g_sErrorMessages[%2]
-	
+
 	#if defined _Text_Send
 		#define Command_Error(%0,%2) (Command_ErrorMsg(%2)[0]?(Text_Send((%0),Command_ErrorMsg(%2)),Command_ErrorRet(%2)):Command_ErrorRet(%2))
 	#else
@@ -439,14 +439,14 @@ FUNC_PAWNDOC(Command_Name(f));
 
 /*
 
-    88b           d88            88                       db        88888888ba  88  
-    888b         d888            ""                      d88b       88      "8b 88  
-    88`8b       d8'88                                   d8'`8b      88      ,8P 88  
-    88 `8b     d8' 88 ,adPPYYba, 88 8b,dPPYba,         d8'  `8b     88aaaaaa8P' 88  
-    88  `8b   d8'  88 ""     `Y8 88 88P'   `"8a       d8YaaaaY8b    88""""""'   88  
-    88   `8b d8'   88 ,adPPPPP88 88 88       88      d8""""""""8b   88          88  
-    88    `888'    88 88,    ,88 88 88       88     d8'        `8b  88          88  
-    88     `8'     88 `"8bbdP"Y8 88 88       88    d8'          `8b 88          88  
+    88b           d88            88                       db        88888888ba  88
+    888b         d888            ""                      d88b       88      "8b 88
+    88`8b       d8'88                                   d8'`8b      88      ,8P 88
+    88 `8b     d8' 88 ,adPPYYba, 88 8b,dPPYba,         d8'  `8b     88aaaaaa8P' 88
+    88  `8b   d8'  88 ""     `Y8 88 88P'   `"8a       d8YaaaaY8b    88""""""'   88
+    88   `8b d8'   88 ,adPPPPP88 88 88       88      d8""""""""8b   88          88
+    88    `888'    88 88,    ,88 88 88       88     d8'        `8b  88          88
+    88     `8'     88 `"8bbdP"Y8 88 88       88    d8'          `8b 88          88
 
 */
 
@@ -479,41 +479,41 @@ GLOBAL__ Command_GetID(const string:function[])
  * <param name="inherit">Does the new command use the parent's permissions?</param>
  * <returns>
  *   The command's ID.  You can't do this:
- *   
+ *
  *   <code>
  *     Command_Add("help");
  *     Command_AddAlt("help", "h");
  *     Command_AddAlt("h", "ajuda");
  *   </code>
- *   
+ *
  *   The chaining won't work, only the top-level command will be used as a point
  *   of reference.  This code will run as if it were:
- *   
+ *
  *   <code>
  *     Command_Add("help");
  *     Command_AddAlt("help", "h");
  *     Command_AddAlt("help", "ajuda");
  *   </code>
- *   
+ *
  *   Previously this was done silently behind the scenes because it didn't
  *   matter - the externally observable effects were always the same.  However,
  *   it does matter now with permission inheritance, because these two things
  *   are different:
- *   
+ *
  *   <code>
  *     Command_Add("help");
  *     Command_AddAlt("help", "h");
  *     Command_AddAlt("h", "ajuda", true);
  *   </code>
- *   
+ *
  *   Vs:
- *   
+ *
  *   <code>
  *     Command_Add("help");
  *     Command_AddAlt("help", "h");
  *     Command_AddAlt("help", "ajuda", true);
  *   </code>
- *   
+ *
  *   In the first version you'd expect <c>/ajuda</c> to inherit the permissions
  *   of <c>/h</c>, which may be different to the permissions of <c>/help</c>.
  *   However, in the second (accurate) version <c>/ajuda</c> will inherit from
@@ -547,7 +547,7 @@ GLOBAL__ Command_AddAlt__(oidx, const string:cmd[], bool:inherit)
 		}
 		Debug_Warning("Command_AddAlt: Using grandparent for alternate `/%s`", cmd);
 	}
-	
+
 	if ((id = Command_GetEmptySlot()) == COMMAND_NOT_FOUND)
 	{
 		Debug_Error("Could not add alt command to array.");
@@ -559,7 +559,7 @@ GLOBAL__ Command_AddAlt__(oidx, const string:cmd[], bool:inherit)
 	// Save the command's pointer.
 	oidx |= cellmin,
 	YSI_g_sCommands[id][E_COMMAND_POINTER] = oidx;
-	
+
 	//if (strfind(cmd, "@") == -1)
 	//{
 	//	strpack(YSI_g_sCommandName, cmd, cellmax),
@@ -633,41 +633,41 @@ GLOBAL__ Command_AddAlt__(oidx, const string:cmd[], bool:inherit)
  * <remarks>
  *   Add an alternate command for an existing command.  Switched to a wrapper
  *   so we can add a third optional parameter.  You can't do this:
- *   
+ *
  *   <code>
  *     Command_Add("help");
  *     Command_AddAlt("help", "h");
  *     Command_AddAlt("h", "ajuda");
  *   </code>
- *   
+ *
  *   The chaining won't work, only the top-level command will be used as a point
  *   of reference.  This code will run as if it were:
- *   
+ *
  *   <code>
  *     Command_Add("help");
  *     Command_AddAlt("help", "h");
  *     Command_AddAlt("help", "ajuda");
  *   </code>
- *   
+ *
  *   Previously this was done silently behind the scenes because it didn't
  *   matter - the externally observable effects were always the same.  However,
  *   it does matter now with permission inheritance, because these two things
  *   are different:
- *   
+ *
  *   <code>
  *     Command_Add("help");
  *     Command_AddAlt("help", "h");
  *     Command_AddAlt("h", "ajuda", true);
  *   </code>
- *   
+ *
  *   Vs:
- *   
+ *
  *   <code>
  *     Command_Add("help");
  *     Command_AddAlt("help", "h");
  *     Command_AddAlt("help", "ajuda", true);
  *   </code>
- *   
+ *
  *   In the first version you'd expect <c>/ajuda</c> to inherit the permissions
  *   of <c>/h</c>, which may be different to the permissions of <c>/help</c>.
  *   However, in the second (accurate) version <c>/ajuda</c> will inherit from
@@ -869,7 +869,7 @@ static stock e_COMMAND_ERRORS:Command_ReProcess__(playerid, const string:cmdtext
 			// call any command for any player, but these commands don't have
 			// permissions, they literally don't exist for other players.
 			sRet = COMMAND_UNDEFINED;
-			FOREACH__ (sHash : YSI_g_sPlayerCommands<playerid>)
+			FOREACH__ (sHash : YSIg_sPlayerCommands<playerid>)
 			{
 				sFlags = YSI_g_sInlineCommands[sHash][E_COMMAND_INLINE_FLAGS];
 				if (_:(sFlags & e_COMMAND_FLAG_PARENT) == YSI_g_sCurrentID)
@@ -892,7 +892,7 @@ static stock e_COMMAND_ERRORS:Command_ReProcess__(playerid, const string:cmdtext
 							{
 								// Release any dangling pointers.
 								Indirect_Release(_:sRet),
-								Iter_Remove(YSI_g_sPlayerCommands<playerid>, sHash),
+								Iter_Remove(YSIg_sPlayerCommands<playerid>, sHash),
 								sRet = COMMAND_DENIED;
 							}
 						}
@@ -902,7 +902,7 @@ static stock e_COMMAND_ERRORS:Command_ReProcess__(playerid, const string:cmdtext
 							if (TARGET_FUNC__ Command_TryRelease__<_:YSI_g_sMasterData[YSI_g_sCurrentID]>(-1, _:sRet))
 							{
 								// Release any dangling pointers.
-								Iter_Remove(YSI_g_sPlayerCommands<playerid>, sHash),
+								Iter_Remove(YSIg_sPlayerCommands<playerid>, sHash),
 								sRet = COMMAND_DENIED;
 							}
 							else
@@ -1232,7 +1232,7 @@ GLOBAL__ bool:Command_RunScript(playerid, const string:cmdtext[])
 			_YSI_ConstMod(cmdtext[end], ';');
 		}
 	}
-	
+
 	return false;
 }
 
@@ -1272,14 +1272,14 @@ GLOBAL__ Command_ReProcess(p,const string:c[],h)
 
 /*
 
-    88888888ba                                          88                     88                                    
-    88      "8b                                         ""                     ""                                    
-    88      ,8P                                                                                                      
-    88aaaaaa8P' ,adPPYba, 8b,dPPYba, 88,dPYba,,adPYba,  88 ,adPPYba, ,adPPYba, 88  ,adPPYba,  8b,dPPYba,  ,adPPYba,  
-    88""""""'  a8P_____88 88P'   "Y8 88P'   "88"    "8a 88 I8[    "" I8[    "" 88 a8"     "8a 88P'   `"8a I8[    ""  
-    88         8PP""""""" 88         88      88      88 88  `"Y8ba,   `"Y8ba,  88 8b       d8 88       88  `"Y8ba,   
-    88         "8b,   ,aa 88         88      88      88 88 aa    ]8I aa    ]8I 88 "8a,   ,a8" 88       88 aa    ]8I  
-    88          `"Ybbd8"' 88         88      88      88 88 `"YbbdP"' `"YbbdP"' 88  `"YbbdP"'  88       88 `"YbbdP"'  
+    88888888ba                                          88                     88
+    88      "8b                                         ""                     ""
+    88      ,8P
+    88aaaaaa8P' ,adPPYba, 8b,dPPYba, 88,dPYba,,adPYba,  88 ,adPPYba, ,adPPYba, 88  ,adPPYba,  8b,dPPYba,  ,adPPYba,
+    88""""""'  a8P_____88 88P'   "Y8 88P'   "88"    "8a 88 I8[    "" I8[    "" 88 a8"     "8a 88P'   `"8a I8[    ""
+    88         8PP""""""" 88         88      88      88 88  `"Y8ba,   `"Y8ba,  88 8b       d8 88       88  `"Y8ba,
+    88         "8b,   ,aa 88         88      88      88 88 aa    ]8I aa    ]8I 88 "8a,   ,a8" 88       88 aa    ]8I
+    88          `"Ybbd8"' 88         88      88      88 88 `"YbbdP"' `"YbbdP"' 88  `"YbbdP"'  88       88 `"YbbdP"'
 
 */
 
@@ -1576,7 +1576,7 @@ static stock Command_Find__(const string:cmd[], playerid)
 				// isn't a better option already.  We loop through all the per-
 				// player commands for this player and check if any of the point
 				// to the current ID as their parent.
-				FOREACH__ (candidate : YSI_g_sPlayerCommands<playerid>)
+				FOREACH__ (candidate : YSIg_sPlayerCommands<playerid>)
 				{
 					if (_:(YSI_g_sInlineCommands[candidate][E_COMMAND_INLINE_FLAGS] & e_COMMAND_FLAG_PARENT) == id)
 					{
@@ -1791,14 +1791,14 @@ GLOBAL__ bool:Command_GetSilentReturn()
 
 /*
 
-    88888888888                                                     db        88888888ba  88  
-    88                        ,d                                   d88b       88      "8b 88  
-    88                        88                                  d8'`8b      88      ,8P 88  
-    88aaaaa     8b,     ,d8 MM88MMM 8b,dPPYba, ,adPPYYba,        d8'  `8b     88aaaaaa8P' 88  
-    88"""""      `Y8, ,8P'    88    88P'   "Y8 ""     `Y8       d8YaaaaY8b    88""""""'   88  
-    88             )888(      88    88         ,adPPPPP88      d8""""""""8b   88          88  
-    88           ,d8" "8b,    88,   88         88,    ,88     d8'        `8b  88          88  
-    88888888888 8P'     `Y8   "Y888 88         `"8bbdP"Y8    d8'          `8b 88          88  
+    88888888888                                                     db        88888888ba  88
+    88                        ,d                                   d88b       88      "8b 88
+    88                        88                                  d8'`8b      88      ,8P 88
+    88aaaaa     8b,     ,d8 MM88MMM 8b,dPPYba, ,adPPYYba,        d8'  `8b     88aaaaaa8P' 88
+    88"""""      `Y8, ,8P'    88    88P'   "Y8 ""     `Y8       d8YaaaaY8b    88""""""'   88
+    88             )888(      88    88         ,adPPPPP88      d8""""""""8b   88          88
+    88           ,d8" "8b,    88,   88         88,    ,88     d8'        `8b  88          88
+    88888888888 8P'     `Y8   "Y888 88         `"8bbdP"Y8    d8'          `8b 88          88
 
 */
 
@@ -2001,14 +2001,14 @@ GLOBAL__ YCMD_GetPlayerCommandCount(playerid)
 
 /*
 
-    888b      88                                                     
-    8888b     88                                                     
-    88 `8b    88                                                     
-    88  `8b   88 ,adPPYYba, 88,dPYba,,adPYba,   ,adPPYba, ,adPPYba,  
-    88   `8b  88 ""     `Y8 88P'   "88"    "8a a8P_____88 I8[    ""  
-    88    `8b 88 ,adPPPPP88 88      88      88 8PP"""""""  `"Y8ba,   
-    88     `8888 88,    ,88 88      88      88 "8b,   ,aa aa    ]8I  
-    88      `888 `"8bbdP"Y8 88      88      88  `"Ybbd8"' `"YbbdP"'  
+    888b      88
+    8888b     88
+    88 `8b    88
+    88  `8b   88 ,adPPYYba, 88,dPYba,,adPYba,   ,adPPYba, ,adPPYba,
+    88   `8b  88 ""     `Y8 88P'   "88"    "8a a8P_____88 I8[    ""
+    88    `8b 88 ,adPPPPP88 88      88      88 8PP"""""""  `"Y8ba,
+    88     `8888 88,    ,88 88      88      88 "8b,   ,aa aa    ]8I
+    88      `888 `"8bbdP"Y8 88      88      88  `"Ybbd8"' `"YbbdP"'
 
 */
 
@@ -2156,14 +2156,14 @@ GLOBAL__ string:Command_GetNext(index, playerid)
 
 /*
 
-    88                                                                                  
-    88   ,d                                      ,d                                     
-    88   88                                      88                                     
-    88 MM88MMM ,adPPYba, 8b,dPPYba, ,adPPYYba, MM88MMM ,adPPYba,  8b,dPPYba, ,adPPYba,  
-    88   88   a8P_____88 88P'   "Y8 ""     `Y8   88   a8"     "8a 88P'   "Y8 I8[    ""  
-    88   88   8PP""""""" 88         ,adPPPPP88   88   8b       d8 88          `"Y8ba,   
-    88   88,  "8b,   ,aa 88         88,    ,88   88,  "8a,   ,a8" 88         aa    ]8I  
-    88   "Y888 `"Ybbd8"' 88         `"8bbdP"Y8   "Y888 `"YbbdP"'  88         `"YbbdP"'  
+    88
+    88   ,d                                      ,d
+    88   88                                      88
+    88 MM88MMM ,adPPYba, 8b,dPPYba, ,adPPYYba, MM88MMM ,adPPYba,  8b,dPPYba, ,adPPYba,
+    88   88   a8P_____88 88P'   "Y8 ""     `Y8   88   a8"     "8a 88P'   "Y8 I8[    ""
+    88   88   8PP""""""" 88         ,adPPPPP88   88   8b       d8 88          `"Y8ba,
+    88   88,  "8b,   ,aa 88         88,    ,88   88,  "8a,   ,a8" 88         aa    ]8I
+    88   "Y888 `"Ybbd8"' 88         `"8bbdP"Y8   "Y888 `"YbbdP"'  88         `"YbbdP"'
 
 */
 
@@ -2254,16 +2254,16 @@ GLOBAL__ Iter_Func@PlayerCommand(start, pid)
 #define Iterator@PlayerCommand iterstart(-1)
 
 /*
-  
-    88888888ba                           ad88 88                                  
-    88      "8b                         d8"   ""                                  
-    88      ,8P                         88                                        
-    88aaaaaa8P' 8b,dPPYba,  ,adPPYba, MM88MMM 88 8b,     ,d8 ,adPPYba, ,adPPYba,  
-    88""""""'   88P'   "Y8 a8P_____88   88    88  `Y8, ,8P' a8P_____88 I8[    ""  
-    88          88         8PP"""""""   88    88    )888(   8PP"""""""  `"Y8ba,   
-    88          88         "8b,   ,aa   88    88  ,d8" "8b, "8b,   ,aa aa    ]8I  
-    88          88          `"Ybbd8"'   88    88 8P'     `Y8 `"Ybbd8"' `"YbbdP"'  
-  
+
+    88888888ba                           ad88 88
+    88      "8b                         d8"   ""
+    88      ,8P                         88
+    88aaaaaa8P' 8b,dPPYba,  ,adPPYba, MM88MMM 88 8b,     ,d8 ,adPPYba, ,adPPYba,
+    88""""""'   88P'   "Y8 a8P_____88   88    88  `Y8, ,8P' a8P_____88 I8[    ""
+    88          88         8PP"""""""   88    88    )888(   8PP"""""""  `"Y8ba,
+    88          88         "8b,   ,aa   88    88  ,d8" "8b, "8b,   ,aa aa    ]8I
+    88          88          `"Ybbd8"'   88    88 8P'     `Y8 `"Ybbd8"' `"YbbdP"'
+
 */
 
 /*-------------------------------------------------------------------------*//**
@@ -2276,15 +2276,15 @@ GLOBAL__ Iter_Func@PlayerCommand(start, pid)
 
 #if defined Y_COMMANDS_USE_CHARS
 	FOREIGN__ Command_GetPrefix(c);
-	
+
 	GLOBAL__ Command_GetPrefix(c)
 	{
 		if (_Command_IsValid(c) && !_Command_IsInline(c)) return _Command_GetPrefix(c);
 		return '/';
 	}
-	
+
 	FOREIGN__ Command_GetPrefixNamed(const string:c[]);
-	
+
 	GLOBAL__ Command_GetPrefixNamed(const string:c[])
 	{
 		return Command_GetPrefix(Command_Find(c));
@@ -2325,7 +2325,7 @@ GLOBAL__ Iter_Func@PlayerCommand(start, pid)
 
 #if defined Y_COMMANDS_USE_CHARS
 	FOREIGN__ bool:Command_IsPrefixUsed(prefix);
-	
+
 	GLOBAL__ bool:Command_IsPrefixUsed(prefix)
 	{
 		return Command_IsValidPrefix(prefix) && Bit_Get(YSI_g_sPrefixes, prefix);
@@ -2365,7 +2365,7 @@ GLOBAL__ Iter_Func@PlayerCommand(start, pid)
 
 #if defined Y_COMMANDS_USE_CHARS
 	FOREIGN__ bool:Command_SetPrefix(c, prefix);
-	
+
 	GLOBAL__ bool:Command_SetPrefix(c, prefix)
 	{
 		if (Command_IsValidPrefix(prefix))
@@ -2397,7 +2397,7 @@ GLOBAL__ Iter_Func@PlayerCommand(start, pid)
 
 #if defined Y_COMMANDS_USE_CHARS
 	FOREIGN__ bool:Command_SetPrefixNamed(const string:c[], prefix);
-	
+
 	GLOBAL__ bool:Command_SetPrefixNamed(const string:c[], prefix)
 	{
 		return Command_SetPrefix(Command_Find(c), prefix);
@@ -2406,14 +2406,14 @@ GLOBAL__ Iter_Func@PlayerCommand(start, pid)
 
 /*
 
-    88        88                         88                   
-    88        88                         88                   
-    88        88                         88                   
-    88aaaaaaaa88  ,adPPYba,   ,adPPYba,  88   ,d8  ,adPPYba,  
-    88""""""""88 a8"     "8a a8"     "8a 88 ,a8"   I8[    ""  
-    88        88 8b       d8 8b       d8 8888[      `"Y8ba,   
-    88        88 "8a,   ,a8" "8a,   ,a8" 88`"Yba,  aa    ]8I  
-    88        88  `"YbbdP"'   `"YbbdP"'  88   `Y8a `"YbbdP"'  
+    88        88                         88
+    88        88                         88
+    88        88                         88
+    88aaaaaaaa88  ,adPPYba,   ,adPPYba,  88   ,d8  ,adPPYba,
+    88""""""""88 a8"     "8a a8"     "8a 88 ,a8"   I8[    ""
+    88        88 8b       d8 8b       d8 8888[      `"Y8ba,
+    88        88 "8a,   ,a8" "8a,   ,a8" 88`"Yba,  aa    ]8I
+    88        88  `"YbbdP"'   `"YbbdP"'  88   `Y8a `"YbbdP"'
 
 */
 
@@ -2627,14 +2627,14 @@ HOOK__ OnScriptExit()
 
 /*
 
-    88                                                                88  
-    88              ,d                                                88  
-    88              88                                                88  
-    88 8b,dPPYba, MM88MMM ,adPPYba, 8b,dPPYba, 8b,dPPYba,  ,adPPYYba, 88  
-    88 88P'   `"8a  88   a8P_____88 88P'   "Y8 88P'   `"8a ""     `Y8 88  
-    88 88       88  88   8PP""""""" 88         88       88 ,adPPPPP88 88  
-    88 88       88  88,  "8b,   ,aa 88         88       88 88,    ,88 88  
-    88 88       88  "Y888 `"Ybbd8"' 88         88       88 `"8bbdP"Y8 88  
+    88                                                                88
+    88              ,d                                                88
+    88              88                                                88
+    88 8b,dPPYba, MM88MMM ,adPPYba, 8b,dPPYba, 8b,dPPYba,  ,adPPYYba, 88
+    88 88P'   `"8a  88   a8P_____88 88P'   "Y8 88P'   `"8a ""     `Y8 88
+    88 88       88  88   8PP""""""" 88         88       88 ,adPPPPP88 88
+    88 88       88  88,  "8b,   ,aa 88         88       88 88,    ,88 88
+    88 88       88  "Y888 `"Ybbd8"' 88         88       88 `"8bbdP"Y8 88
 
 */
 
@@ -2822,18 +2822,18 @@ GLOBAL__ Command_AddCallback__(const string:c[],p,i,f)
 	Debug_Print2("Command_AddCallback called: %s, %d, %08x, %d", c, p, i, f);
 	new
 		hash,
-		id = Iter_Alloc(YSI_g_sPlayerCommands<p>);
+		id = Iter_Alloc(YSIg_sPlayerCommands<p>);
 	if (id == INVALID_ITERATOR_SLOT)
 	{
 		Debug_Error("Could not add inline command to array.");
 		return COMMAND_NOT_FOUND;
 	}
-	
+
 	Puny_EncodeHash(YSI_g_sCommandName, c, hash, .delimiter = '@'),
 	strpack(YSI_g_sCommandName, YSI_g_sCommandName, cellmax);
 	Debug_Print5("Command_AddCallback: packed %s, %s", YSI_g_sCommandName, c);
 	Debug_Print5("Command_AddCallback: unpacked %s, %s", Unpack(YSI_g_sCommandName), Unpack(c));
-	
+
 	// Check if there is already an inline entry point for this command.
 	new
 		parent = HashMap_GetWithHash(YSI_g_sCommandMap, YSI_g_sCommandName, hash),
@@ -2875,12 +2875,12 @@ GLOBAL__ Command_AddCallback__(const string:c[],p,i,f)
 			PA_Init(YSI_g_sCommands[parent][E_COMMAND_USERS], false);
 		}
 	}
-	
+
 	// Check if they already have an inline command with this name.
 	if (PA_Get(YSI_g_sCommands[parent][E_COMMAND_USERS], p))
 	{
 		Debug_Print5("Command_AddCallback: Has existing command");
-		FOREACH__ (tmp : YSI_g_sPlayerCommands<p>)
+		FOREACH__ (tmp : YSIg_sPlayerCommands<p>)
 		{
 			if ((YSI_g_sInlineCommands[tmp][E_COMMAND_INLINE_FLAGS] & e_COMMAND_FLAG_PARENT) == (e_COMMAND_FLAGS:parent))
 			{
@@ -2898,7 +2898,7 @@ GLOBAL__ Command_AddCallback__(const string:c[],p,i,f)
 			}
 		}
 	}
-	
+
 	Debug_Print5("Command_AddCallback: return %d, %d, %d, %d", parent, id, _:Master_Caller(), _:(f | parent));
 	return
 		PA_Set(YSI_g_sCommands[parent][E_COMMAND_USERS], p, true),
@@ -2986,7 +2986,7 @@ FOREIGN__ void:Command_RemoveCallback__(const string:c[],p,o,i);
 GLOBAL__ void:Command_RemoveCallback__(const string:c[],p,o,i)
 {
 	Debug_Print2("Command_RemoveCallback called: %s, %d, %d, %08x", c, p, o, i);
-	// TODO: I need to 
+	// TODO: I need to
 	if (i != 0)
 	{
 		Debug_Print5("Command_RemoveCallback: Exact pointer");
@@ -2997,7 +2997,7 @@ GLOBAL__ void:Command_RemoveCallback__(const string:c[],p,o,i)
 				m = Master_Caller();
 		#endif
 			o = COMMAND_NOT_FOUND; // Unknown.
-			FOREACH__ (new id : YSI_g_sPlayerCommands<p>)
+			FOREACH__ (new id : YSIg_sPlayerCommands<p>)
 			{
 				if (YSI_g_sInlineCommands[id][E_COMMAND_INLINE_POINTER] == i)
 				{
@@ -3010,7 +3010,7 @@ GLOBAL__ void:Command_RemoveCallback__(const string:c[],p,o,i)
 						{
 					#endif
 							o = YSI_g_sInlineCommands[id][E_COMMAND_INLINE_FLAGS] & e_COMMAND_FLAG_PARENT,
-							Iter_Remove(YSI_g_sPlayerCommands<p>, id);
+							Iter_Remove(YSIg_sPlayerCommands<p>, id);
 					#if YSIM_HAS_MASTER
 							TARGET_FUNC__ Command_TryRelease__<m>(cellmin, i);
 						}
@@ -3021,7 +3021,7 @@ GLOBAL__ void:Command_RemoveCallback__(const string:c[],p,o,i)
 			}
 			if (o != COMMAND_NOT_FOUND)
 			{
-				FOREACH__ (new id : YSI_g_sPlayerCommands<p>)
+				FOREACH__ (new id : YSIg_sPlayerCommands<p>)
 				{
 					if ((YSI_g_sInlineCommands[id][E_COMMAND_INLINE_FLAGS] & e_COMMAND_FLAG_PARENT) == e_COMMAND_FLAGS:o)
 					{
@@ -3037,7 +3037,7 @@ GLOBAL__ void:Command_RemoveCallback__(const string:c[],p,o,i)
 	{
 		Debug_Print5("Command_RemoveCallback: All for player");
 		// No command specified.  Remove everything for this player.
-		FOREACH__ (new id : YSI_g_sPlayerCommands<p>)
+		FOREACH__ (new id : YSIg_sPlayerCommands<p>)
 		{
 			// Remove it.
 			#if YSIM_HAS_MASTER
@@ -3046,7 +3046,7 @@ GLOBAL__ void:Command_RemoveCallback__(const string:c[],p,o,i)
 				Indirect_Release(YSI_g_sInlineCommands[id][E_COMMAND_INLINE_POINTER]);
 			#endif
 				PA_Set(YSI_g_sCommands[YSI_g_sInlineCommands[id][E_COMMAND_INLINE_FLAGS] & e_COMMAND_FLAG_PARENT][E_COMMAND_USERS], p, false),
-				Iter_Remove(YSI_g_sPlayerCommands<p>, id);
+				Iter_Remove(YSIg_sPlayerCommands<p>, id);
 		}
 	}
 	else if (o == cellmin)
@@ -3065,7 +3065,7 @@ GLOBAL__ void:Command_RemoveCallback__(const string:c[],p,o,i)
 		}
 		if (i != COMMAND_NOT_FOUND && PA_Get(YSI_g_sCommands[i][E_COMMAND_USERS], p))
 		{
-			FOREACH__ (new id : YSI_g_sPlayerCommands<p>)
+			FOREACH__ (new id : YSIg_sPlayerCommands<p>)
 			{
 				if ((YSI_g_sInlineCommands[id][E_COMMAND_INLINE_FLAGS] & e_COMMAND_FLAG_PARENT) == e_COMMAND_FLAGS:i)
 				{
@@ -3075,7 +3075,7 @@ GLOBAL__ void:Command_RemoveCallback__(const string:c[],p,o,i)
 					#else
 						Indirect_Release(YSI_g_sInlineCommands[id][E_COMMAND_INLINE_POINTER]);
 					#endif
-						Iter_Remove(YSI_g_sPlayerCommands<p>, id);
+						Iter_Remove(YSIg_sPlayerCommands<p>, id);
 				}
 			}
 			PA_Set(YSI_g_sCommands[i][E_COMMAND_USERS], p, false);
@@ -3100,24 +3100,24 @@ GLOBAL__ void:Command_RemoveCallback__(const string:c[],p,o,i)
 			}
 			if (i != COMMAND_NOT_FOUND && PA_Get(YSI_g_sCommands[i][E_COMMAND_USERS], p))
 			{
-				FOREACH__ (new id : YSI_g_sPlayerCommands<p>)
+				FOREACH__ (new id : YSIg_sPlayerCommands<p>)
 				{
 					#if YSIM_HAS_MASTER
 						// Only the originating script can remove a callback
 						// with a specified owner.
 						if ((YSI_g_sInlineCommands[id][E_COMMAND_INLINE_FLAGS] & e_COMMAND_FLAG_PARENT) == e_COMMAND_FLAGS:i && YSI_g_sInlineCommands[id][E_COMMAND_INLINE_MASTER] == Bit:m && TARGET_FUNC__ Command_TryRelease__<m>(o, YSI_g_sInlineCommands[id][E_COMMAND_INLINE_POINTER]))
 						{
-							Iter_Remove(YSI_g_sPlayerCommands<p>, id);
+							Iter_Remove(YSIg_sPlayerCommands<p>, id);
 						}
 					#else
 						if ((YSI_g_sInlineCommands[id][E_COMMAND_INLINE_FLAGS] & e_COMMAND_FLAG_PARENT) == e_COMMAND_FLAGS:i && Indirect_GetOwner(YSI_g_sInlineCommands[id][E_COMMAND_INLINE_POINTER]) == o)
 						{
 							Indirect_Release(YSI_g_sInlineCommands[id][E_COMMAND_INLINE_POINTER]),
-							Iter_Remove(YSI_g_sPlayerCommands<p>, id);
+							Iter_Remove(YSIg_sPlayerCommands<p>, id);
 						}
 					#endif
 				}
-				FOREACH__ (new id : YSI_g_sPlayerCommands<p>)
+				FOREACH__ (new id : YSIg_sPlayerCommands<p>)
 				{
 					if ((YSI_g_sInlineCommands[id][E_COMMAND_INLINE_FLAGS] & e_COMMAND_FLAG_PARENT) == e_COMMAND_FLAGS:i)
 					{
@@ -3385,39 +3385,39 @@ native Command_Strcat_(dest[], src, len) = strcat;
  * </returns>
  * <remarks>
  *   No combination of this works:
- *   
+ *
  *   <code>
  *     Command_Decorator__(alts[][] = {})
  *   </code>
- *   
+ *
  *   Hence we need to use:
- *   
+ *
  *   <code>
  *     Command_Decorator__(.alts = ref(alts));
  *   </code>
- *   
+ *
  *   I.e. use a pointer to an array.  Not nice, but meh.  We must ensure that
  *   the decorator macro allows:
- *   
+ *
  *   <code>
  *     @cmd(.alts = { "h", "help", "ajuda" });
  *   </code>
- *   
+ *
  *   And translates this to:
- *   
+ *
  *   <code>
  *     const alts = { "h", "help", "ajuda" };                                   <br />
  *     Command_Decorator__(.altcount = sizeof (alts), .altpointer = ref(alts));
  *   </code>
- *   
+ *
  *   For now this is the only parameter that needs special handling.  Example:
- *   
+ *
  *   <code>
  *     @cmd(.group = gAdmins, .prefix = '!') ban(playerid, params[], help)      <br />
  *     {                                                                        <br />
  *     }
  *   </code>
- *   
+ *
  * </remarks>
  *//*------------------------------------------------------------------------**/
 
