@@ -147,6 +147,7 @@ Optional plugins:
 #define callback: F@_@:
 
 stock
+	YSI_g_sCodSize,
 	InlineRet:YSI_gInlineRet = InlineRet:0;
 
 stock Callback_Return_(value)
@@ -265,10 +266,6 @@ __COMPILER_CONST_STATIC INLINE_PATTERN_2 = _C<_Y_L>;
 __COMPILER_CONST_STATIC INLINE_PATTERN_3 = _C<ess_>;
 __COMPILER_CONST_STATIC INLINE_PATTERN_4 = _C<Cole>;
 
-forward Callback_Release_(ResolvedAlloc:a);
-forward Inline_MaybeFree_(Alloc:slot);
-forward Inline_MaybeConst_(ResolvedAlloc:slot);
-
 #define CALL@I@F%8() I@F%8()
 #define CALL@I@L%8() I@L%8()
 #define CALL@I@K%8() I@K%8(0)
@@ -282,22 +279,67 @@ forward Inline_MaybeConst_(ResolvedAlloc:slot);
 #define CALL@Inline_operatorMul%8() ((@Ik:0)*%8(0))
 #define CALL@Inline_EBC__%8() Inline_EBC__%8(0,0)
 
+static stock Inline_TBC__(timerID)
+{
+	// Destroy inlines with this owner.
+	Indirect_Disconnect((timerID | (0x1FF << 22)) & cellmax);
+}
+
 stock Inline_EBC__(owner, tag)
 {
-	// 8 bits for the tag (max 256), 23 for the ID (max 4,194,303 * 2), 1 for an
-  // indirection.inc internal flag.
-	return (owner | (tag & 0x3FF << 23));
+	if (tag == -1)
+	{
+		// Flag timers as tag `0xFF` with an upper bit set.
+		static
+			timerID = -1;
+		return
+			++timerID,
+			//// Set a timer to kill this inline eventually.
+			YSI_SetTimerEx__(&Inline_TBC__, owner, false, YSI_gcI, timerID),
+			(timerID | (0x1FF << 22)) & cellmax;
+	}
+	else
+	{
+		// 8 bits for the tag (max 256), 23 for the ID (max 4,194,303 * 2), 1
+		// for an indirection.inc internal flag.  A tag of `255` is reserved
+		// for TBC, i.e. timers.
+		return (owner | (tag << 23)) & cellmax;
+	}
 }
 
 stock operator*(@Ik:func, ebc)
 {
-	Indirect_SetOwner(func, ebc);
+	// This operator crashes the compiler if we try to call another function
+	// from inside it.  Why?  No clue, but as a result I've had to completely
+	// inline the code in here.  It is not a good situation!  This is very
+	// internal `indirection` implementation details, which should not be
+	// exposed here, but there's not really another choice - just calling any
+	// other function, even a local empty one, causes the crash.
+	new tmp = _:func;
+	if (tmp >= YSI_g_sCodSize)
+	{
+		// Get the data at `func - COD`.
+		#emit LOAD.S.pri   tmp
+		#emit LOAD.alt     YSI_g_sCodSize
+		#emit SUB
+		#emit MOVE.alt
+		#emit LOAD.I
+		#emit STOR.S.pri   tmp
+		if (tmp)
+		{
+			// Probably a string.
+			return _:func;
+		}
+		{}
+		#emit STOR.S.alt   tmp
+		// Store the owner.
+		tmp += E_INDIRECTION_OWNER__;
+		ebc |= cellmin;
+		#emit LOAD.S.pri   ebc
+		#emit SREF.S.pri   tmp
+	}
 	return _:func;
 }
-
-static stock const
-	YSI_gscSpecifier_i[] = "i",
-	YSI_gscInline_MaybeFree[] = "Inline_MaybeFree_";
 
 static stock
 	YSI_g_sFakeE_INLINE_CALL[E_INLINE_CALL];
@@ -385,14 +427,14 @@ stock operator~(I@T:inlines[], size)
 	YSI_g_sInlineLinkedList = size - YSI_g_sJumpOffset;
 }
 
-public Inline_MaybeFree_(Alloc:slot)
+static stock Inline_MaybeFree_(Alloc:slot)
 {
 	// If this function is called, the given inline left the call stack without
 	// being claimed.
 	free(slot);
 }
 
-public Inline_MaybeConst_(ResolvedAlloc:slot)
+static stock Inline_MaybeConst_(ResolvedAlloc:slot)
 {
 	// If this function is called, the given inline has been claimed, but has
 	// left the current scope, so can't have its closure written back to.
@@ -690,6 +732,14 @@ public OnCodeInit()
 				// Ensure this function is included.  It causes HUGE issues when not.
 				new tmp[2];
 				strunpack(tmp, tmp);
+			}
+			if (!YSI_g_sCodSize)
+			{
+				AddressofResolve();
+				new
+					amxhdr[AMX_HDR];
+				GetAmxHeader(amxhdr);
+				YSI_g_sCodSize = amxhdr[AMX_HDR_DAT] - amxhdr[AMX_HDR_COD];
 			}
 			
 			new scanner[CodeScanner];
@@ -1177,7 +1227,7 @@ stock Function:GetRemoteFunction(const func[], const spec[], tag = 0)
 	mset(closure, _:E_INDIRECTION_HANDER, _:addressof (Callback_RemoteHandler_<x>));
 	mset(closure, _:E_INDIRECTION_CLAIM, _:addressof (Callback_Claim_));
 	mset(closure, _:E_INDIRECTION_RELEASE, _:addressof (Callback_Release_<tResolvedAlloc:>));    
-	mset(closure, _:E_PUBLIC_CALL_TIMER, YSI_SetTimerEx__(YSI_gscInline_MaybeFree, 0, false, YSI_gscSpecifier_i, _:closure));
+	mset(closure, _:E_PUBLIC_CALL_TIMER, YSI_SetTimerEx__(&Inline_MaybeFree_<tAlloc:>, 0, false, YSI_gcI, _:closure));
 	mset(closure, _:E_PUBLIC_CALL_FLAGS, e_INLINE_FLAG_PUBLIC);
 	mset(closure, _:E_INDIRECTION_METADATA, 0);
 	if (tag)
@@ -1235,7 +1285,7 @@ stock Function:GetLocalFunction(const func[], const spec[], tag = 0)
 	mset(closure, _:E_INDIRECTION_HANDER, _:addressof (Callback_LocalHandler_<x>));
 	mset(closure, _:E_INDIRECTION_CLAIM, _:addressof (Callback_Claim_));
 	mset(closure, _:E_INDIRECTION_RELEASE, _:addressof (Callback_Release_<tResolvedAlloc:>));    
-	mset(closure, _:E_PUBLIC_CALL_TIMER, YSI_SetTimerEx__(YSI_gscInline_MaybeFree, 0, false, YSI_gscSpecifier_i, _:closure));
+	mset(closure, _:E_PUBLIC_CALL_TIMER, YSI_SetTimerEx__(&Inline_MaybeFree_<tAlloc:>, 0, false, YSI_gcI, _:closure));
 	mset(closure, _:E_PUBLIC_CALL_FLAGS, e_INLINE_FLAG_PUBLIC);
 	mset(closure, _:E_INDIRECTION_METADATA, 0);
 	if (tag)
@@ -1354,7 +1404,7 @@ static stock Callback_InlineByName(const name[], tag)
 				mset(closure, _:E_INDIRECTION_HANDER, _:addressof (Callback_CallHandler_<x>));
 				mset(closure, _:E_INDIRECTION_CLAIM, _:addressof (Callback_Claim_));
 				mset(closure, _:E_INDIRECTION_RELEASE, _:addressof (Callback_Release_<tResolvedAlloc:>));    
-				mset(closure, _:E_INLINE_CALL_TIMER, YSI_SetTimerEx__(YSI_gscInline_MaybeFree, 0, false, YSI_gscSpecifier_i, _:closure));
+				mset(closure, _:E_INLINE_CALL_TIMER, YSI_SetTimerEx__(&Inline_MaybeFree_<tAlloc:>, 0, false, YSI_gcI, _:closure));
 				mset(closure, _:E_INLINE_CALL_FLAGS, e_INLINE_FLAG_CONST);
 				mset(closure, _:E_INDIRECTION_METADATA, 0);
 				mset(closure, _:E_INDIRECTION_TAG, tag);
@@ -1620,7 +1670,7 @@ stock Callback_Release(const input[E_CALLBACK_DATA])
 static stock Callback_Claim_(func[E_INLINE_CALL])
 {
 	KillTimer(func[E_INLINE_CALL_TIMER]);
-	func[E_INLINE_CALL_TIMER] = YSI_SetTimerEx__("Inline_MaybeConst_", 0, false, YSI_gscSpecifier_i, AMX_Ref(func[E_INLINE_CALL:E_INDIRECTION_ALWAYS_NULL]));
+	func[E_INLINE_CALL_TIMER] = YSI_SetTimerEx__(&Inline_MaybeConst_<tResolvedAlloc:>, 0, false, YSI_gcI, AMX_Ref(func[E_INLINE_CALL:E_INDIRECTION_ALWAYS_NULL]));
 }
 
 /*-------------------------------------------------------------------------*//**
@@ -2143,7 +2193,7 @@ static stock Inline_DoCodeGen(const scanner[CodeScanner], const data[E_INLINE_DA
 	AsmEmitPadding(ctx);
 }
 
-public Callback_Release_(ResolvedAlloc:a)
+static stock Callback_Release_(ResolvedAlloc:a)
 {
 	KillTimer(AMX_Read(_:a + E_INLINE_CALL_TIMER__));
 	free(Malloc_Reconcile(a));
@@ -2201,7 +2251,7 @@ stock Inline_UI_(const &header, tag)
 	mset(closure, _:E_INDIRECTION_HANDER, _:addressof (Callback_CallHandler_<x>));
 	mset(closure, _:E_INDIRECTION_CLAIM, _:addressof (Callback_Claim_));
 	mset(closure, _:E_INDIRECTION_RELEASE, _:addressof (Callback_Release_<tResolvedAlloc:>));    
-	mset(closure, _:E_INLINE_CALL_TIMER, YSI_SetTimerEx__(YSI_gscInline_MaybeFree, 0, false, YSI_gscSpecifier_i, _:closure));
+	mset(closure, _:E_INLINE_CALL_TIMER, YSI_SetTimerEx__(&Inline_MaybeFree_<tAlloc:>, 0, false, YSI_gcI, _:closure));
 	mset(closure, _:E_INLINE_CALL_FLAGS, e_INLINE_FLAG_CONST);
 	mset(closure, _:E_INDIRECTION_METADATA, 0);
 	mset(closure, _:E_INDIRECTION_TAG, tag);
