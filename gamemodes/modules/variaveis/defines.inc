@@ -2,3 +2,5 @@
 #define WEAPON_FIST 0
 
 #define MAX_ZONES 115
+
+#define ROUND_TIME (5*60)

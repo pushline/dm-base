@@ -117,16 +117,25 @@ new const arenaData[MAX_ZONES][arenaa] =
 	{"Homeless Shelter", {1686.0, -1936.5, 1964.0, -1705.5}}
 };
 
+new Iterator:ArenaQueue<MAX_ZONES>;
+new Iterator:Arenas<MAX_ZONES>;
+
 stock createZones()
 {
 	for (new i = 0; i < MAX_ZONES; i++)
+	{
 		CreateZone(
 			arenaData[i][arenaPos][0],
 			arenaData[i][arenaPos][1],
 			arenaData[i][arenaPos][2],
-			arenaData[i][arenaPos][3]);
-	for (new i = 0; i < MAX_ZONES; i++)
-		CreateZoneNumber(i,i,1);
+			arenaData[i][arenaPos][3]
+		);
+
+		Iter_Add(ArenaQueue, i);
+		Iter_Add(Arenas, i);
+
+		CreateZoneNumber(i, i, 1);
+	}
 
 	return true;
 }

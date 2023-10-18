@@ -1,26 +1,26 @@
 initArena()
 {
-	arenaInfo[roundMints] = ROUND_TIME;
-	arenaInfo[arenaId] = random(MAX_ZONES);
+  arenaInfo[roundMints] = ROUND_TIME;
+  arenaInfo[arenaId] = Iter_Random(Arenas);
+  Iter_Remove(ArenaQueue, arenaInfo[arenaId]);
+  printf("arenaInfo[arenaId] %d", arenaInfo[arenaId]);
 
-	return true;
+  return true;
 }
 
 iniciarServidor()
 {
-	initArena();
+  SetNameTagDrawDistance(40.0);
 
-	SetNameTagDrawDistance(40.0);
-	SetGameModeText(gamemodeName);
-
-	DisableInteriorEnterExits();
-	UsePlayerPedAnims();
-	EnableStuntBonusForAll(false);
-	SetDisableSyncBugs(true);
-	SetTimer("OnScriptUpdate", 1000, true);
-	SetWeaponDamage(WEAPON_SNIPER, DAMAGE_TYPE_STATIC, 40.0);
-	gmtextdraws();
-	createZones();
+  DisableInteriorEnterExits();
+  UsePlayerPedAnims();
+  EnableStuntBonusForAll(false);
+  SetDisableSyncBugs(true);
+  SetTimer("OnScriptUpdate", 1000, true);
+  SetWeaponDamage(WEAPON_SNIPER, DAMAGE_TYPE_STATIC, 40.0);
+  // gmtextdraws();
+  createZones();
+  initArena();
 }
 
 forward OnScriptUpdate();
@@ -28,30 +28,27 @@ public OnScriptUpdate()
 {
 	new strm[256];
 
-	if(arenaInfo[isRunningArena])
-	{
-		arenaInfo[roundMints]--;
+	arenaInfo[roundMints]--;
 
-		if(arenaInfo[roundMints] < 0)
+	if(arenaInfo[roundMints] < 0)
+  {
+    new nextArena = determineArenaID();
+    printf("nextArena %d", nextArena);
+
+    foreach(new i : Player)
 		{
-			new nextArena = determineArenaID();
-
-			foreach(new p : Player)
-			{
-				if(User[p][locationId] != i)
-					continue;
-
-				format(strm, sizeof(strm), ARENA_ENDED_MSG,
-							arenaData[arenaInfo[arenaId]][arenaName], arenaInfo[arenaId],	arenaData[nextArena][arenaName], nextArena);
-				SendClientMessage(p, -1, strm);
-
-				ZoneNumberStopFlashForAll(arenaInfo[arenaId]);
-			}
-
-			GetRoundRank(i);
-			arenaInfo[arenaId] = nextArena;
-			PrepareChangeArena(i);
+			format(strm, sizeof(strm), ARENA_ENDED_MSG,
+              arenaData[arenaInfo[arenaId]][arenaName],
+              arenaInfo[arenaId],
+              arenaData[nextArena][arenaName],
+              nextArena
+            );
+			SendClientMessage(i, -1, strm);
+			ZoneNumberStopFlashForAll(arenaInfo[arenaId]);
 		}
+
+    arenaInfo[arenaId] = nextArena;
+		//PrepareChangeArena();
 	}
 
 	foreach(new i : Player)
@@ -158,10 +155,71 @@ returnDate(timestamp, _form=0 )
 
 setAfk(playerid)
 {
-
+  SetPlayerVirtualWorld(playerid, 999);
+  return 1;
 }
 
-Respawn(playerid)
+Respawn(playerid, timestamp)
 {
+  timestamp = 0;
+  if(User[playerid][adminLevel] >= 4)
+  {
+    SetPlayerPos(playerid, 0, 0, 0);
+    SpawnPlayerEx(playerid);
+    return true;
+  }
 
+  if(User[playerid][timerRespawn] > timestamp)
+    SendClientMessage(playerid, -1, "DEBUG");
+
+  if(User[playerid][isAfk])
+    SendClientMessage(playerid, -1, "DEBUG");
+
+  new Float:Armour;
+  GetPlayerArmour(playerid, Armour);
+
+  if(Armour < 20.0)
+    SendClientMessage(playerid, -1, "MENSAGEM CANT RESPAWN");
+
+  SetPlayerPos(playerid, 0, 0, 0);
+  SpawnPlayerEx(playerid);
+
+  User[playerid][timerRespawn] = gettime() + 1;
+
+  return true;
+}
+
+SpawnPlayerEx(playerid)
+{
+  if(IsPlayerInAnyVehicle(playerid))
+    RemovePlayerFromVehicle(playerid);
+
+  SpawnPlayer(playerid);
+  return 1;
+}
+
+determineArenaID()
+{
+  new rand;
+  if (Iter_IsEmpty(ArenaQueue))
+  {
+    foreach (new i : Arenas)
+    {
+      if (arenaInfo[arenaId] != i)
+      {
+        Iter_Add(ArenaQueue, i);
+      }
+    }
+  }
+
+  rand = Iter_Random(ArenaQueue);
+  Iter_Remove(ArenaQueue, rand);
+
+  return rand;
+}
+
+updatePlayerHud(playerid)
+{
+  SetPlayerVirtualWorld(playerid, 999); // workaround
+  return 1;
 }

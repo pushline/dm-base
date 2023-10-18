@@ -16,6 +16,9 @@ enum e_USER
     adminLevel,
     playerMoney,
     lastLogin,
+    timerRespawn,
+    time,
+    weather,
 
     bool:isLogged,
     bool:isAfk,
@@ -52,7 +55,7 @@ enum playerArena
     arenaDeaths
 }
 
-new playerArenaInfo[MAX_PLAYERS][playerArena];
+//new playerArenaInfo[MAX_PLAYERS][playerArena];
 
 enum arenaa{
 	arenaName[30],

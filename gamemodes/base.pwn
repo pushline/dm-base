@@ -27,23 +27,26 @@
 #include "modules/variaveis/global.inc"
 #include "modules/variaveis/dialogs.inc"
 
+#include "modules/arenas/arena.inc"
+
 #include "modules/servidor/db.inc"
 #include "modules/servidor/funcoes.inc"
 
-main(){
+main()
+{
   printf("base dm v1.0 - by pushline");
 }
 
 public OnGameModeInit()
 {
-  DisableCrashDetectLongCall();
-  Command_SetDeniedReturn(true); // Prevenir mensagem "Unknown Command" do ycmd
-  mysql_log(ERROR);
-  ligarDB();
+	DisableCrashDetectLongCall();
+	Command_SetDeniedReturn(true); // Prevenir mensagem "Unknown Command" do ycmd
+	mysql_log(ERROR);
+	ligarDB();
 	SetGameModeText("DM BASE");
 	iniciarServidor();
 
-  return true;
+	return true;
 }
 
 public OnGameModeExit()
@@ -55,6 +58,8 @@ public OnGameModeExit()
 public OnPlayerConnect(playerid)
 {
 	User[playerid] = User[MAX_PLAYERS];
+	User[playerid][time] = 10;
+	User[playerid][weather] = 10;
 
 	GetPlayerIp(playerid, User[playerid][lastip], 18);
 	GetPlayerName(playerid, User[playerid][userName], MAX_PLAYER_NAME + 1);
@@ -103,19 +108,23 @@ public OnPlayerSpawn(playerid)
 	SetPlayerInterior(playerid, 0);
 	SetPlayerWorldBounds(playerid, 20000.0, -20000.0, 20000.0, -20000.0);
 
+	// TODO: Spawn on arena
+
 	if(IsPlayerInAnyVehicle(playerid))
 		RemovePlayerFromVehicle(playerid);
+
+	new timestamp = gettime();
 
 	if(User[playerid][isAfk])
 		setAfk(playerid);
 	else
-		Respawn(playerid);
+		Respawn(playerid, timestamp);
 
 	if(GetPVarInt(playerid, "firstSpawn") != 0)
 	{
 		for (new i; i < MAX_ZONES; i ++)
 		{
-			ShowZoneForPlayer(playerid, i, 0x85807FFF, 0xFFFFFFFF, 0xFFFFFFFF);
+			ShowZoneForPlayer(playerid, i, 0x85807F65, 0xFFFFFFFF, 0xFFFFFFFF);
 		}
 
 		SetPlayerTime(playerid, User[playerid][time], 0);

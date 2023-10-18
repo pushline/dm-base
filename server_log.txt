@@ -765,3 +765,1274 @@ v0.3.7-R2, (C)2005-2015 SA-MP Team
 [19:58:45] [connection] incoming connection: 127.0.0.1:53224 id: 0
 [19:58:45] [join] kaue has joined the server (0:127.0.0.1)
 [19:59:03] [part] kaue has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[21:23:49] 
+[21:23:49] Server Plugins
+[21:23:49] --------------
+[21:23:49]  Loading plugin: crashdetect
+[21:23:49]   CrashDetect plugin 4.21
+[21:23:49]   Loaded.
+[21:23:49]  Loading plugin: streamer
+[21:23:49] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[21:23:49]   Loaded.
+[21:23:49]  Loading plugin: mysql
+[21:23:49]  >> plugin.mysql: R41-4 successfully loaded.
+[21:23:49]   Loaded.
+[21:23:49]  Loading plugin: pawnraknet
+[21:23:49] [Pawn.RakNet] plugin v1.6.0 loading...
+[21:23:49] [Pawn.RakNet] 
+
+    | Pawn.RakNet 1.6.0 | 2016 - 2023
+    |--------------------------------
+    | Author and maintainer: katursis
+
+
+    | Compiled: Feb 12 2023 at 19:36:19
+    |--------------------------------------------------------------
+    | Repository: https://github.com/katursis/Pawn.RakNet
+    |--------------------------------------------------------------
+    | Wiki: https://github.com/katursis/Pawn.RakNet/wiki
+
+[21:23:49]   Loaded.
+[21:23:49]  Loading plugin: sscanf
+[21:23:49] 
+[21:23:49]  ===============================
+[21:23:49] 
+[21:23:49]       sscanf plugin loaded.     
+[21:23:49] 
+[21:23:49]          Version: 2.13.8
+[21:23:49] 
+[21:23:49]    (c) 2022 Alex "Y_Less" Cole  
+[21:23:49] 
+[21:23:49]  ===============================
+[21:23:49] 
+[21:23:49]   Loaded.
+[21:23:49]  Loading plugin: samp_bcrypt
+[21:23:49] [SampBcrypt] [info]: Version: 0.4.0
+[21:23:49]   Loaded.
+[21:23:49]  Loaded 6 plugins.
+
+[21:23:49] 
+[21:23:49] Filterscripts
+[21:23:49] ---------------
+[21:23:49]   Loaded 0 filterscripts.
+
+[21:23:49]  
+[21:23:49]  
+[21:23:49]          ==============================================================
+[21:23:49]          |                                                            |
+[21:23:49]          |                                                            |
+[21:23:49]          |    YYYYYYY       YYYYYYY    SSSSSSSSSSSSSSS  IIIIIIIIII    |
+[21:23:49]          |    Y:::::Y       Y:::::Y  SS:::::::::::::::S I::::::::I    |
+[21:23:49]          |    Y:::::Y       Y:::::Y S:::::SSSSSS::::::S I::::::::I    |
+[21:23:49]          |    Y::::::Y     Y::::::Y S:::::S     SSSSSSS II::::::II    |
+[21:23:49]          |    YYY:::::Y   Y:::::YYY S:::::S               I::::I      |
+[21:23:49]          |       Y:::::Y Y:::::Y    S:::::S               I::::I      |
+[21:23:49]          |        Y:::::Y:::::Y      S::::SSSS            I::::I      |
+[21:23:49]          |         Y:::::::::Y        SS::::::SSSSS       I::::I      |
+[21:23:49]          |          Y:::::::Y           SSS::::::::SS     I::::I      |
+[21:23:49]          |           Y:::::Y               SSSSSS::::S    I::::I      |
+[21:23:49]          |           Y:::::Y                    S:::::S   I::::I      |
+[21:23:49]          |           Y:::::Y                    S:::::S   I::::I      |
+[21:23:49]          |           Y:::::Y        SSSSSSS     S:::::S II::::::II    |
+[21:23:49]          |        YYYY:::::YYYY     S::::::SSSSSS:::::S I::::::::I    |
+[21:23:49]          |        Y:::::::::::Y     S:::::::::::::::SS  I::::::::I    |
+[21:23:49]          |        YYYYYYYYYYYYY      SSSSSSSSSSSSSSS    IIIIIIIIII    |
+[21:23:49]          |                                                            |
+[21:23:49]          |                                                            |
+[21:23:49]          |                      (c) 2021 MPL v1.1                     |
+[21:23:49]          |            Alex "Y_Less" Cole and contributors.            |
+[21:23:49]          |                                                            |
+[21:23:49]          |                                                            |
+[21:23:49]          ==============================================================
+[21:23:49]  
+[21:23:49]  
+[21:23:49]  ========================================== 
+[21:23:49]  |                                        | 
+[21:23:49]  |  Missing YSI scriptfiles directories:  | 
+[21:23:49]  |                                        | 
+[21:23:49]  |      /scriptfiles/YSI/fixes/           | 
+[21:23:49]  |      /scriptfiles/YSI/temp/            | 
+[21:23:49]  |                                        | 
+[21:23:49]  ========================================== 
+[21:23:49]  |                                        | 
+[21:23:49]  |   Generating code, this may take a     | 
+[21:23:49]  |  little bit of time.  Note that this   | 
+[21:23:49]  |  code generation works best with the   | 
+[21:23:49]  |     JIT plugin, which you are not      | 
+[21:23:49]  |     currently using.  Get it here:     | 
+[21:23:49]  |                                        | 
+[21:23:49]  |       https://git.io/jit-plugin        | 
+[21:23:49]  |                                        | 
+[21:23:49]  |             Please wait...             | 
+[21:23:49]  |                                        | 
+[21:23:49]  |             Done in 121ms!             | 
+[21:23:49]  |                                        | 
+[21:23:49]  ========================================== 
+[21:23:49]   Filterscript '../scriptfiles/callbackfix.amx' loaded.
+[21:23:49] *** YSI Info: YSI Script ID: 1
+[21:23:49]  |                                        | 
+[21:23:49]  | Server:      0.3.7-R2 (Windows)        | 
+[21:23:49]  | Started:     17 Oct 2023 - 21:23:49    | 
+[21:23:49]  |                                        | 
+[21:23:49]  | Compiler:    3.10.10 (Windows)         | 
+[21:23:49]  | Includes:    0.3DL                     | 
+[21:23:49]  | Codepage:    <none>                    | 
+[21:23:49]  | Built:       17 Oct 2023 - 21:23:10    | 
+[21:23:49]  |                                        | 
+[21:23:49]  | YSI:         v5.07.3082                | 
+[21:23:49]  | Master:      1                         | 
+[21:23:49]  |                                        | 
+[21:23:49]  | JIT:         <none>                    | 
+[21:23:49]  | Crashdetect: <found>                   | 
+[21:23:49]  |                                        | 
+[21:23:49]  ========================================== 
+[21:23:49]  
+[21:23:49] [debug] Long callback execution detected (hang or performance issue)
+[21:23:49] [debug] AMX backtrace:
+[21:23:49] [debug] #0 0000b590 in AMX_GetEntryPrefix (E_AMX_TABLE:table=0, idx=31, &buffer=@02d55d90 0, pattern=1598650688) at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_amx_impl.inc:1118
+[21:23:49] [debug] #1 0000b994 in AMX_GetPointerPrefix (E_AMX_TABLE:table=0, idx=0, &buffer=@02d55db0 0, pattern=1598650688) at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_amx_impl.inc:2016
+[21:23:49] [debug] #2 0001002c in ScriptInit_PreInitFuncs_ () at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_core_entry.inc:544
+[21:23:49] [debug] #3 000082b4 in PawnRakNet_OnGameModeInit () at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_scriptinit_impl.inc:1835
+[21:23:49] [debug] #4 00005f78 in SSCANF_OnGameModeInit ()  at D:\devshit\dmbase\pawno\include\Pawn.RakNet.inc:1153
+[21:23:49] [debug] #5 00002218 in public OnPlayerText () at D:\devshit\dmbase\pawno\include\sscanf2.inc:1066
+[21:23:49]  
+[21:23:49] MySQL conectou.
+[21:23:49] base dm v1.0 - by pushline
+[21:23:49] Number of vehicle models: 0
+[21:24:04] [connection] 127.0.0.1:61695 requests connection cookie.
+[21:24:05] [connection] incoming connection: 127.0.0.1:61695 id: 0
+[21:24:06] [join] pushline has joined the server (0:127.0.0.1)
+[21:24:10] [debug] Run time error 4: "Array index out of bounds"
+[21:24:10] [debug]  Attempted to read/write array element at negative index -2147483648
+[21:24:10] [debug] AMX backtrace:
+[21:24:10] [debug] #0 000766fc in ZoneNumberFlashForPlayer (playerid=0, zoneid=-2147483648, color=-872414977) at D:\devshit\dmbase\pawno\include\a_zone.inc:484
+[21:24:10] [debug] #1 0008c0d8 in WC_OnPlayerSpawn (0)  at D:\devshit\dmbase\gamemodes\base.pwn:132
+[21:24:10] [debug] #2 00055b54 in public OnPlayerSpawn (0) at D:\devshit\dmbase\pawno\include\weapon-config.inc:3172
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[21:28:25] 
+[21:28:25] Server Plugins
+[21:28:25] --------------
+[21:28:25]  Loading plugin: crashdetect
+[21:28:25]   CrashDetect plugin 4.21
+[21:28:25]   Loaded.
+[21:28:25]  Loading plugin: streamer
+[21:28:25] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[21:28:25]   Loaded.
+[21:28:25]  Loading plugin: mysql
+[21:28:25]  >> plugin.mysql: R41-4 successfully loaded.
+[21:28:25]   Loaded.
+[21:28:25]  Loading plugin: pawnraknet
+[21:28:25] [Pawn.RakNet] plugin v1.6.0 loading...
+[21:28:25] [Pawn.RakNet] 
+
+    | Pawn.RakNet 1.6.0 | 2016 - 2023
+    |--------------------------------
+    | Author and maintainer: katursis
+
+
+    | Compiled: Feb 12 2023 at 19:36:19
+    |--------------------------------------------------------------
+    | Repository: https://github.com/katursis/Pawn.RakNet
+    |--------------------------------------------------------------
+    | Wiki: https://github.com/katursis/Pawn.RakNet/wiki
+
+[21:28:25]   Loaded.
+[21:28:25]  Loading plugin: sscanf
+[21:28:25] 
+[21:28:25]  ===============================
+[21:28:25] 
+[21:28:25]       sscanf plugin loaded.     
+[21:28:25] 
+[21:28:25]          Version: 2.13.8
+[21:28:25] 
+[21:28:25]    (c) 2022 Alex "Y_Less" Cole  
+[21:28:25] 
+[21:28:25]  ===============================
+[21:28:25] 
+[21:28:25]   Loaded.
+[21:28:25]  Loading plugin: samp_bcrypt
+[21:28:25] [SampBcrypt] [info]: Version: 0.4.0
+[21:28:25]   Loaded.
+[21:28:25]  Loaded 6 plugins.
+
+[21:28:25] 
+[21:28:25] Filterscripts
+[21:28:25] ---------------
+[21:28:25]   Loaded 0 filterscripts.
+
+[21:28:25]  
+[21:28:25]  
+[21:28:25]          ==============================================================
+[21:28:25]          |                                                            |
+[21:28:25]          |                                                            |
+[21:28:25]          |    YYYYYYY       YYYYYYY    SSSSSSSSSSSSSSS  IIIIIIIIII    |
+[21:28:25]          |    Y:::::Y       Y:::::Y  SS:::::::::::::::S I::::::::I    |
+[21:28:25]          |    Y:::::Y       Y:::::Y S:::::SSSSSS::::::S I::::::::I    |
+[21:28:25]          |    Y::::::Y     Y::::::Y S:::::S     SSSSSSS II::::::II    |
+[21:28:25]          |    YYY:::::Y   Y:::::YYY S:::::S               I::::I      |
+[21:28:25]          |       Y:::::Y Y:::::Y    S:::::S               I::::I      |
+[21:28:25]          |        Y:::::Y:::::Y      S::::SSSS            I::::I      |
+[21:28:25]          |         Y:::::::::Y        SS::::::SSSSS       I::::I      |
+[21:28:25]          |          Y:::::::Y           SSS::::::::SS     I::::I      |
+[21:28:25]          |           Y:::::Y               SSSSSS::::S    I::::I      |
+[21:28:25]          |           Y:::::Y                    S:::::S   I::::I      |
+[21:28:25]          |           Y:::::Y                    S:::::S   I::::I      |
+[21:28:25]          |           Y:::::Y        SSSSSSS     S:::::S II::::::II    |
+[21:28:25]          |        YYYY:::::YYYY     S::::::SSSSSS:::::S I::::::::I    |
+[21:28:25]          |        Y:::::::::::Y     S:::::::::::::::SS  I::::::::I    |
+[21:28:25]          |        YYYYYYYYYYYYY      SSSSSSSSSSSSSSS    IIIIIIIIII    |
+[21:28:25]          |                                                            |
+[21:28:25]          |                                                            |
+[21:28:25]          |                      (c) 2021 MPL v1.1                     |
+[21:28:25]          |            Alex "Y_Less" Cole and contributors.            |
+[21:28:25]          |                                                            |
+[21:28:25]          |                                                            |
+[21:28:25]          ==============================================================
+[21:28:25]  
+[21:28:25]  
+[21:28:25]  ========================================== 
+[21:28:25]  |                                        | 
+[21:28:25]  |  Missing YSI scriptfiles directories:  | 
+[21:28:25]  |                                        | 
+[21:28:25]  |      /scriptfiles/YSI/fixes/           | 
+[21:28:25]  |      /scriptfiles/YSI/temp/            | 
+[21:28:25]  |                                        | 
+[21:28:25]  ========================================== 
+[21:28:25]  |                                        | 
+[21:28:25]  |   Generating code, this may take a     | 
+[21:28:25]  |  little bit of time.  Note that this   | 
+[21:28:25]  |  code generation works best with the   | 
+[21:28:25]  |     JIT plugin, which you are not      | 
+[21:28:25]  |     currently using.  Get it here:     | 
+[21:28:25]  |                                        | 
+[21:28:25]  |       https://git.io/jit-plugin        | 
+[21:28:25]  |                                        | 
+[21:28:25]  |             Please wait...             | 
+[21:28:25]  |                                        | 
+[21:28:25]  |             Done in 129ms!             | 
+[21:28:25]  |                                        | 
+[21:28:25]  ========================================== 
+[21:28:25]   Filterscript '../scriptfiles/callbackfix.amx' loaded.
+[21:28:25] *** YSI Info: YSI Script ID: 1
+[21:28:25]  |                                        | 
+[21:28:25]  | Server:      0.3.7-R2 (Windows)        | 
+[21:28:25]  | Started:     17 Oct 2023 - 21:28:25    | 
+[21:28:25]  |                                        | 
+[21:28:25]  | Compiler:    3.10.10 (Windows)         | 
+[21:28:25]  | Includes:    0.3DL                     | 
+[21:28:25]  | Codepage:    <none>                    | 
+[21:28:25]  | Built:       17 Oct 2023 - 21:27:50    | 
+[21:28:25]  |                                        | 
+[21:28:25] [debug] Long callback execution detected (hang or performance issue)
+[21:28:25] [debug] AMX backtrace:
+[21:28:25] [debug] #0 00006ea4 in Server_PrintIntroPart (56980) at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_scriptinit_impl.inc:1070
+[21:28:25] [debug] #1 00009120 in YVers_PrintHeader () at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_version.inc:644
+[21:28:25] [debug] #2 0000946c in YVers_StartCheck () at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_version.inc:784
+[21:28:25] [debug] #3 0000828c in PawnRakNet_OnGameModeInit () at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_scriptinit_impl.inc:1832
+[21:28:25] [debug] #4 00005f78 in SSCANF_OnGameModeInit ()  at D:\devshit\dmbase\pawno\include\Pawn.RakNet.inc:1153
+[21:28:25] [debug] #5 00002218 in public OnPlayerText () at D:\devshit\dmbase\pawno\include\sscanf2.inc:1066
+[21:28:25]  | YSI:         v5.07.3082                | 
+[21:28:25]  | Master:      1                         | 
+[21:28:25]  |                                        | 
+[21:28:25]  | JIT:         <none>                    | 
+[21:28:25]  | Crashdetect: <found>                   | 
+[21:28:25]  |                                        | 
+[21:28:25]  ========================================== 
+[21:28:25]  
+[21:28:25]  
+[21:28:25] MySQL conectou.
+[21:28:25] arenaInfo[arenaId] --
+[21:28:25] base dm v1.0 - by pushline
+[21:28:25] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[21:35:08] 
+[21:35:08] Server Plugins
+[21:35:08] --------------
+[21:35:08]  Loading plugin: crashdetect
+[21:35:08]   CrashDetect plugin 4.21
+[21:35:08]   Loaded.
+[21:35:08]  Loading plugin: streamer
+[21:35:08] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[21:35:08]   Loaded.
+[21:35:08]  Loading plugin: mysql
+[21:35:08]  >> plugin.mysql: R41-4 successfully loaded.
+[21:35:08]   Loaded.
+[21:35:08]  Loading plugin: pawnraknet
+[21:35:08] [Pawn.RakNet] plugin v1.6.0 loading...
+[21:35:08] [Pawn.RakNet] 
+
+    | Pawn.RakNet 1.6.0 | 2016 - 2023
+    |--------------------------------
+    | Author and maintainer: katursis
+
+
+    | Compiled: Feb 12 2023 at 19:36:19
+    |--------------------------------------------------------------
+    | Repository: https://github.com/katursis/Pawn.RakNet
+    |--------------------------------------------------------------
+    | Wiki: https://github.com/katursis/Pawn.RakNet/wiki
+
+[21:35:08]   Loaded.
+[21:35:08]  Loading plugin: sscanf
+[21:35:08] 
+[21:35:08]  ===============================
+[21:35:08] 
+[21:35:08]       sscanf plugin loaded.     
+[21:35:08] 
+[21:35:08]          Version: 2.13.8
+[21:35:08] 
+[21:35:08]    (c) 2022 Alex "Y_Less" Cole  
+[21:35:08] 
+[21:35:08]  ===============================
+[21:35:08] 
+[21:35:08]   Loaded.
+[21:35:08]  Loading plugin: samp_bcrypt
+[21:35:08] [SampBcrypt] [info]: Version: 0.4.0
+[21:35:08]   Loaded.
+[21:35:08]  Loaded 6 plugins.
+
+[21:35:08] 
+[21:35:08] Filterscripts
+[21:35:08] ---------------
+[21:35:08]   Loaded 0 filterscripts.
+
+[21:35:08]  
+[21:35:08]  
+[21:35:08]          ==============================================================
+[21:35:08]          |                                                            |
+[21:35:08]          |                                                            |
+[21:35:08]          |    YYYYYYY       YYYYYYY    SSSSSSSSSSSSSSS  IIIIIIIIII    |
+[21:35:08]          |    Y:::::Y       Y:::::Y  SS:::::::::::::::S I::::::::I    |
+[21:35:08]          |    Y:::::Y       Y:::::Y S:::::SSSSSS::::::S I::::::::I    |
+[21:35:08]          |    Y::::::Y     Y::::::Y S:::::S     SSSSSSS II::::::II    |
+[21:35:08]          |    YYY:::::Y   Y:::::YYY S:::::S               I::::I      |
+[21:35:08]          |       Y:::::Y Y:::::Y    S:::::S               I::::I      |
+[21:35:08]          |        Y:::::Y:::::Y      S::::SSSS            I::::I      |
+[21:35:08]          |         Y:::::::::Y        SS::::::SSSSS       I::::I      |
+[21:35:08]          |          Y:::::::Y           SSS::::::::SS     I::::I      |
+[21:35:08]          |           Y:::::Y               SSSSSS::::S    I::::I      |
+[21:35:08]          |           Y:::::Y                    S:::::S   I::::I      |
+[21:35:08]          |           Y:::::Y                    S:::::S   I::::I      |
+[21:35:08]          |           Y:::::Y        SSSSSSS     S:::::S II::::::II    |
+[21:35:08]          |        YYYY:::::YYYY     S::::::SSSSSS:::::S I::::::::I    |
+[21:35:08]          |        Y:::::::::::Y     S:::::::::::::::SS  I::::::::I    |
+[21:35:08]          |        YYYYYYYYYYYYY      SSSSSSSSSSSSSSS    IIIIIIIIII    |
+[21:35:08]          |                                                            |
+[21:35:08]          |                                                            |
+[21:35:08]          |                      (c) 2021 MPL v1.1                     |
+[21:35:08]          |            Alex "Y_Less" Cole and contributors.            |
+[21:35:08]          |                                                            |
+[21:35:08]          |                                                            |
+[21:35:08]          ==============================================================
+[21:35:08]  
+[21:35:08]  
+[21:35:08]  ========================================== 
+[21:35:08]  |                                        | 
+[21:35:08]  |  Missing YSI scriptfiles directories:  | 
+[21:35:08]  |                                        | 
+[21:35:08]  |      /scriptfiles/YSI/fixes/           | 
+[21:35:08]  |      /scriptfiles/YSI/temp/            | 
+[21:35:08]  |                                        | 
+[21:35:08]  ========================================== 
+[21:35:08]  |                                        | 
+[21:35:08]  |   Generating code, this may take a     | 
+[21:35:08]  |  little bit of time.  Note that this   | 
+[21:35:08]  |  code generation works best with the   | 
+[21:35:08]  |     JIT plugin, which you are not      | 
+[21:35:08]  |     currently using.  Get it here:     | 
+[21:35:08]  |                                        | 
+[21:35:08]  |       https://git.io/jit-plugin        | 
+[21:35:08]  |                                        | 
+[21:35:08]  |             Please wait...             | 
+[21:35:08]  |                                        | 
+[21:35:08]  |             Done in 127ms!             | 
+[21:35:08]  |                                        | 
+[21:35:08]  ========================================== 
+[21:35:08]   Filterscript '../scriptfiles/callbackfix.amx' loaded.
+[21:35:08] *** YSI Info: YSI Script ID: 1
+[21:35:08]  |                                        | 
+[21:35:08]  | Server:      0.3.7-R2 (Windows)        | 
+[21:35:08]  | Started:     17 Oct 2023 - 21:35:08    | 
+[21:35:08]  |                                        | 
+[21:35:08]  | Compiler:    3.10.10 (Windows)         | 
+[21:35:08]  | Includes:    0.3DL                     | 
+[21:35:08]  | Codepage:    <none>                    | 
+[21:35:08]  | Built:       17 Oct 2023 - 21:29:46    | 
+[21:35:08]  |                                        | 
+[21:35:08]  | YSI:         v5.07.3082                | 
+[21:35:08]  | Master:      1                         | 
+[21:35:08]  |                                        | 
+[21:35:08]  | JIT:         <none>                    | 
+[21:35:08]  | Crashdetect: <found>                   | 
+[21:35:08]  |                                        | 
+[21:35:08]  ========================================== 
+[21:35:08]  
+[21:35:08] [debug] Long callback execution detected (hang or performance issue)
+[21:35:08] [debug] AMX backtrace:
+[21:35:08] [debug] #0 0000b87c in AMX_GetEntryPrefix (E_AMX_TABLE:table=0, idx=84, &buffer=@02d55dd0 0, pattern=1598650688) at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_amx_impl.inc:1165
+[21:35:08] [debug] #1 0000b994 in AMX_GetPointerPrefix (E_AMX_TABLE:table=0, idx=0, &buffer=@02d55df0 0, pattern=1598650688) at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_amx_impl.inc:2016
+[21:35:08] [debug] #2 0001002c in ScriptInit_PreInitFuncs_ () at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_core_entry.inc:544
+[21:35:08] [debug] #3 000082b4 in PawnRakNet_OnGameModeInit () at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_scriptinit_impl.inc:1835
+[21:35:08] [debug] #4 00005f78 in SSCANF_OnGameModeInit ()  at D:\devshit\dmbase\pawno\include\Pawn.RakNet.inc:1153
+[21:35:08] [debug] #5 00002218 in public OnPlayerText () at D:\devshit\dmbase\pawno\include\sscanf2.inc:1066
+[21:35:08]  
+[21:35:08] MySQL conectou.
+[21:35:08] arenaInfo[arenaId] --
+[21:35:08] <0>
+[21:35:08] <1>
+[21:35:08] <2>
+[21:35:08] <3>
+[21:35:08] <4>
+[21:35:08] <5>
+[21:35:08] <6>
+[21:35:08] <7>
+[21:35:08] <8>
+[21:35:08] <9>
+[21:35:08] <10>
+[21:35:08] <11>
+[21:35:08] <12>
+[21:35:08] <13>
+[21:35:08] <14>
+[21:35:08] <15>
+[21:35:08] <16>
+[21:35:08] <17>
+[21:35:08] <18>
+[21:35:08] <19>
+[21:35:08] <20>
+[21:35:08] <21>
+[21:35:08] <22>
+[21:35:08] <23>
+[21:35:08] <24>
+[21:35:08] <25>
+[21:35:08] <26>
+[21:35:08] <27>
+[21:35:08] <28>
+[21:35:08] <29>
+[21:35:08] <30>
+[21:35:08] <31>
+[21:35:08] <32>
+[21:35:08] <33>
+[21:35:08] <34>
+[21:35:08] <35>
+[21:35:08] <36>
+[21:35:08] <37>
+[21:35:08] <38>
+[21:35:08] <39>
+[21:35:08] <40>
+[21:35:08] <41>
+[21:35:08] <42>
+[21:35:08] <43>
+[21:35:08] <44>
+[21:35:08] <45>
+[21:35:08] <46>
+[21:35:08] <47>
+[21:35:08] <48>
+[21:35:08] <49>
+[21:35:08] <50>
+[21:35:08] <51>
+[21:35:08] <52>
+[21:35:08] <53>
+[21:35:08] <54>
+[21:35:08] <55>
+[21:35:08] <56>
+[21:35:08] <57>
+[21:35:08] <58>
+[21:35:08] <59>
+[21:35:08] <60>
+[21:35:08] <61>
+[21:35:08] <62>
+[21:35:08] <63>
+[21:35:08] <64>
+[21:35:08] <65>
+[21:35:08] <66>
+[21:35:08] <67>
+[21:35:08] <68>
+[21:35:08] <69>
+[21:35:08] <70>
+[21:35:08] <71>
+[21:35:08] <72>
+[21:35:08] <73>
+[21:35:08] <74>
+[21:35:08] <75>
+[21:35:08] <76>
+[21:35:08] <77>
+[21:35:08] <78>
+[21:35:08] <79>
+[21:35:08] <80>
+[21:35:08] <81>
+[21:35:08] <82>
+[21:35:08] <83>
+[21:35:08] <84>
+[21:35:08] <85>
+[21:35:08] <86>
+[21:35:08] <87>
+[21:35:08] <88>
+[21:35:08] <89>
+[21:35:08] <90>
+[21:35:08] <91>
+[21:35:08] <92>
+[21:35:08] <93>
+[21:35:08] <94>
+[21:35:08] <95>
+[21:35:08] <96>
+[21:35:08] <97>
+[21:35:08] <98>
+[21:35:08] <99>
+[21:35:08] <100>
+[21:35:08] <101>
+[21:35:08] <102>
+[21:35:08] <103>
+[21:35:08] <104>
+[21:35:08] <105>
+[21:35:08] <106>
+[21:35:08] <107>
+[21:35:08] <108>
+[21:35:08] <109>
+[21:35:08] <110>
+[21:35:08] <111>
+[21:35:08] <112>
+[21:35:08] <113>
+[21:35:08] <114>
+[21:35:08] base dm v1.0 - by pushline
+[21:35:08] Number of vehicle models: 0
+[21:40:28] rand 28
+[21:40:28] nextArena 28
+[21:40:29] rand 95
+[21:40:29] nextArena 95
+[21:40:30] rand 47
+[21:40:30] nextArena 47
+[21:40:31] rand 36
+[21:40:31] nextArena 36
+[21:40:32] rand 14
+[21:40:32] nextArena 14
+[21:40:33] rand 85
+[21:40:33] nextArena 85
+[21:40:34] rand 76
+[21:40:34] nextArena 76
+[21:40:35] rand 1
+[21:40:35] nextArena 1
+[21:40:36] rand 113
+[21:40:36] nextArena 113
+[21:40:38] rand 43
+[21:40:38] nextArena 43
+[21:40:39] rand 53
+[21:40:39] nextArena 53
+[21:40:40] rand 42
+[21:40:40] nextArena 42
+[21:40:41] rand 91
+[21:40:41] nextArena 91
+[21:40:42] rand 41
+[21:40:42] nextArena 41
+[21:40:43] rand 39
+[21:40:43] nextArena 39
+[21:40:44] rand 99
+[21:40:44] nextArena 99
+[21:40:45] rand 96
+[21:40:45] nextArena 96
+[21:40:46] rand 7
+[21:40:46] nextArena 7
+[21:40:47] rand 65
+[21:40:47] nextArena 65
+[21:40:48] rand 6
+[21:40:48] nextArena 6
+[21:40:49] rand 9
+[21:40:49] nextArena 9
+[21:40:50] rand 97
+[21:40:50] nextArena 97
+[21:40:51] rand 8
+[21:40:51] nextArena 8
+[21:40:52] rand 90
+[21:40:52] nextArena 90
+[21:40:53] rand 74
+[21:40:53] nextArena 74
+[21:40:54] rand 15
+[21:40:54] nextArena 15
+[21:40:56] rand 102
+[21:40:56] nextArena 102
+[21:40:57] rand 57
+[21:40:57] nextArena 57
+[21:40:58] rand 112
+[21:40:58] nextArena 112
+[21:40:59] rand 60
+[21:40:59] nextArena 60
+[21:41:00] rand 104
+[21:41:00] nextArena 104
+[21:41:01] rand 51
+[21:41:01] nextArena 51
+[21:41:02] rand 100
+[21:41:02] nextArena 100
+[21:41:03] rand 19
+[21:41:03] nextArena 19
+[21:41:04] rand 67
+[21:41:04] nextArena 67
+[21:41:05] rand 18
+[21:41:05] nextArena 18
+[21:41:06] rand 10
+[21:41:06] nextArena 10
+[21:41:07] rand 54
+[21:41:07] nextArena 54
+[21:41:08] rand 82
+[21:41:08] nextArena 82
+[21:41:09] rand 72
+[21:41:09] nextArena 72
+[21:41:10] rand 4
+[21:41:10] nextArena 4
+[21:41:12] rand 103
+[21:41:12] nextArena 103
+[21:41:13] rand 46
+[21:41:13] nextArena 46
+[21:41:14] rand 22
+[21:41:14] nextArena 22
+[21:41:15] rand 17
+[21:41:15] nextArena 17
+[21:41:16] rand 108
+[21:41:16] nextArena 108
+[21:41:17] rand 49
+[21:41:17] nextArena 49
+[21:41:18] rand 38
+[21:41:18] nextArena 38
+[21:41:19] rand 71
+[21:41:19] nextArena 71
+[21:41:20] rand 2
+[21:41:20] nextArena 2
+[21:41:21] rand 79
+[21:41:21] nextArena 79
+[21:41:22] rand 44
+[21:41:22] nextArena 44
+[21:41:23] rand 94
+[21:41:23] nextArena 94
+[21:41:24] rand 86
+[21:41:24] nextArena 86
+[21:41:25] rand 107
+[21:41:25] nextArena 107
+[21:41:26] rand 25
+[21:41:26] nextArena 25
+[21:41:27] rand 3
+[21:41:27] nextArena 3
+[21:41:28] rand 21
+[21:41:28] nextArena 21
+[21:41:30] rand 63
+[21:41:30] nextArena 63
+[21:41:31] rand 29
+[21:41:31] nextArena 29
+[21:41:32] rand 93
+[21:41:32] nextArena 93
+[21:41:33] rand 32
+[21:41:33] nextArena 32
+[21:41:34] rand 92
+[21:41:34] nextArena 92
+[21:41:35] rand 84
+[21:41:35] nextArena 84
+[21:41:36] rand 70
+[21:41:36] nextArena 70
+[21:41:37] rand 5
+[21:41:37] nextArena 5
+[21:41:38] rand 52
+[21:41:38] nextArena 52
+[21:41:39] rand 109
+[21:41:39] nextArena 109
+[21:41:40] rand 24
+[21:41:40] nextArena 24
+[21:41:41] rand 89
+[21:41:41] nextArena 89
+[21:41:42] rand 16
+[21:41:42] nextArena 16
+[21:41:43] rand 56
+[21:41:43] nextArena 56
+[21:41:44] rand 111
+[21:41:44] nextArena 111
+[21:41:46] rand 45
+[21:41:46] nextArena 45
+[21:41:47] rand 88
+[21:41:47] nextArena 88
+[21:41:48] rand 64
+[21:41:48] nextArena 64
+[21:41:49] rand 80
+[21:41:49] nextArena 80
+[21:41:50] rand 98
+[21:41:50] nextArena 98
+[21:41:51] rand 12
+[21:41:51] nextArena 12
+[21:41:52] rand 78
+[21:41:52] nextArena 78
+[21:41:53] rand 20
+[21:41:53] nextArena 20
+[21:41:54] rand 75
+[21:41:54] nextArena 75
+[21:41:55] rand 26
+[21:41:55] nextArena 26
+[21:41:56] rand 50
+[21:41:56] nextArena 50
+[21:41:57] rand 110
+[21:41:57] nextArena 110
+[21:41:58] rand 31
+[21:41:58] nextArena 31
+[21:41:59] rand 62
+[21:41:59] nextArena 62
+[21:42:00] rand 37
+[21:42:00] nextArena 37
+[21:42:01] rand 61
+[21:42:01] nextArena 61
+[21:42:03] rand 23
+[21:42:03] nextArena 23
+[21:42:04] rand 66
+[21:42:04] nextArena 66
+[21:42:05] rand 34
+[21:42:05] nextArena 34
+[21:42:06] rand 77
+[21:42:06] nextArena 77
+[21:42:07] rand 114
+[21:42:07] nextArena 114
+[21:42:08] rand 68
+[21:42:08] nextArena 68
+[21:42:09] rand 101
+[21:42:09] nextArena 101
+[21:42:10] rand 40
+[21:42:10] nextArena 40
+[21:42:11] rand 87
+[21:42:11] nextArena 87
+[21:42:12] rand 58
+[21:42:12] nextArena 58
+[21:42:13] rand 105
+[21:42:13] nextArena 105
+[21:42:14] rand 73
+[21:42:14] nextArena 73
+[21:42:15] rand 0
+[21:42:15] nextArena 0
+[21:42:16] rand 69
+[21:42:16] nextArena 69
+[21:42:17] rand 35
+[21:42:17] nextArena 35
+[21:42:18] rand 11
+[21:42:18] nextArena 11
+[21:42:20] rand 27
+[21:42:20] nextArena 27
+[21:42:21] rand 59
+[21:42:21] nextArena 59
+[21:42:22] rand 106
+[21:42:22] nextArena 106
+[21:42:23] rand 13
+[21:42:23] nextArena 13
+[21:42:24] rand 30
+[21:42:24] nextArena 30
+[21:42:25] rand 83
+[21:42:25] nextArena 83
+[21:42:26] rand 33
+[21:42:26] nextArena 33
+[21:42:27] rand 81
+[21:42:27] nextArena 81
+[21:42:28] rand 55
+[21:42:28] nextArena 55
+[21:42:29] rand 48
+[21:42:29] nextArena 48
+[21:42:30] rand 7
+[21:42:30] nextArena 7
+[21:42:31] rand 21
+[21:42:31] nextArena 21
+[21:42:32] rand 3
+[21:42:32] nextArena 3
+[21:42:33] rand 112
+[21:42:33] nextArena 112
+[21:42:34] rand 90
+[21:42:34] nextArena 90
+[21:42:35] rand 91
+[21:42:35] nextArena 91
+[21:42:37] rand 71
+[21:42:37] nextArena 71
+[21:42:38] rand 96
+[21:42:38] nextArena 96
+[21:42:39] rand 75
+[21:42:39] nextArena 75
+[21:42:40] rand 4
+[21:42:40] nextArena 4
+[21:42:41] rand 5
+[21:42:41] nextArena 5
+[21:42:42] rand 23
+[21:42:42] nextArena 23
+[21:42:43] rand 108
+[21:42:43] nextArena 108
+[21:42:44] rand 52
+[21:42:44] nextArena 52
+[21:42:45] rand 113
+[21:42:45] nextArena 113
+[21:42:46] rand 103
+[21:42:46] nextArena 103
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[21:42:49] 
+[21:42:49] Server Plugins
+[21:42:49] --------------
+[21:42:49]  Loading plugin: crashdetect
+[21:42:49]   CrashDetect plugin 4.21
+[21:42:49]   Loaded.
+[21:42:49]  Loading plugin: streamer
+[21:42:49] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[21:42:49]   Loaded.
+[21:42:49]  Loading plugin: mysql
+[21:42:49]  >> plugin.mysql: R41-4 successfully loaded.
+[21:42:49]   Loaded.
+[21:42:49]  Loading plugin: pawnraknet
+[21:42:49] [Pawn.RakNet] plugin v1.6.0 loading...
+[21:42:49] [Pawn.RakNet] 
+
+    | Pawn.RakNet 1.6.0 | 2016 - 2023
+    |--------------------------------
+    | Author and maintainer: katursis
+
+
+    | Compiled: Feb 12 2023 at 19:36:19
+    |--------------------------------------------------------------
+    | Repository: https://github.com/katursis/Pawn.RakNet
+    |--------------------------------------------------------------
+    | Wiki: https://github.com/katursis/Pawn.RakNet/wiki
+
+[21:42:49]   Loaded.
+[21:42:49]  Loading plugin: sscanf
+[21:42:49] 
+[21:42:49]  ===============================
+[21:42:49] 
+[21:42:49]       sscanf plugin loaded.     
+[21:42:49] 
+[21:42:49]          Version: 2.13.8
+[21:42:49] 
+[21:42:49]    (c) 2022 Alex "Y_Less" Cole  
+[21:42:49] 
+[21:42:49]  ===============================
+[21:42:49] 
+[21:42:49]   Loaded.
+[21:42:49]  Loading plugin: samp_bcrypt
+[21:42:49] [SampBcrypt] [info]: Version: 0.4.0
+[21:42:49]   Loaded.
+[21:42:49]  Loaded 6 plugins.
+
+[21:42:49] 
+[21:42:49] Filterscripts
+[21:42:49] ---------------
+[21:42:49]   Loaded 0 filterscripts.
+
+[21:42:49]  
+[21:42:49]  
+[21:42:49]          ==============================================================
+[21:42:49]          |                                                            |
+[21:42:49]          |                                                            |
+[21:42:49]          |    YYYYYYY       YYYYYYY    SSSSSSSSSSSSSSS  IIIIIIIIII    |
+[21:42:49]          |    Y:::::Y       Y:::::Y  SS:::::::::::::::S I::::::::I    |
+[21:42:49]          |    Y:::::Y       Y:::::Y S:::::SSSSSS::::::S I::::::::I    |
+[21:42:49]          |    Y::::::Y     Y::::::Y S:::::S     SSSSSSS II::::::II    |
+[21:42:49]          |    YYY:::::Y   Y:::::YYY S:::::S               I::::I      |
+[21:42:49]          |       Y:::::Y Y:::::Y    S:::::S               I::::I      |
+[21:42:49]          |        Y:::::Y:::::Y      S::::SSSS            I::::I      |
+[21:42:49]          |         Y:::::::::Y        SS::::::SSSSS       I::::I      |
+[21:42:49]          |          Y:::::::Y           SSS::::::::SS     I::::I      |
+[21:42:49]          |           Y:::::Y               SSSSSS::::S    I::::I      |
+[21:42:49]          |           Y:::::Y                    S:::::S   I::::I      |
+[21:42:49]          |           Y:::::Y                    S:::::S   I::::I      |
+[21:42:49]          |           Y:::::Y        SSSSSSS     S:::::S II::::::II    |
+[21:42:49]          |        YYYY:::::YYYY     S::::::SSSSSS:::::S I::::::::I    |
+[21:42:49]          |        Y:::::::::::Y     S:::::::::::::::SS  I::::::::I    |
+[21:42:49]          |        YYYYYYYYYYYYY      SSSSSSSSSSSSSSS    IIIIIIIIII    |
+[21:42:49]          |                                                            |
+[21:42:49]          |                                                            |
+[21:42:49]          |                      (c) 2021 MPL v1.1                     |
+[21:42:49]          |            Alex "Y_Less" Cole and contributors.            |
+[21:42:49]          |                                                            |
+[21:42:49]          |                                                            |
+[21:42:49]          ==============================================================
+[21:42:49]  
+[21:42:49]  
+[21:42:49]  ========================================== 
+[21:42:49]  |                                        | 
+[21:42:49]  |  Missing YSI scriptfiles directories:  | 
+[21:42:49]  |                                        | 
+[21:42:49]  |      /scriptfiles/YSI/fixes/           | 
+[21:42:49]  |      /scriptfiles/YSI/temp/            | 
+[21:42:49]  |                                        | 
+[21:42:49]  ========================================== 
+[21:42:49]  |                                        | 
+[21:42:49]  |   Generating code, this may take a     | 
+[21:42:49]  |  little bit of time.  Note that this   | 
+[21:42:49]  |  code generation works best with the   | 
+[21:42:49]  |     JIT plugin, which you are not      | 
+[21:42:49]  |     currently using.  Get it here:     | 
+[21:42:49]  |                                        | 
+[21:42:49]  |       https://git.io/jit-plugin        | 
+[21:42:49]  |                                        | 
+[21:42:49]  |             Please wait...             | 
+[21:42:50]  |                                        | 
+[21:42:50]  |             Done in 120ms!             | 
+[21:42:50]  |                                        | 
+[21:42:50]  ========================================== 
+[21:42:50]   Filterscript '../scriptfiles/callbackfix.amx' loaded.
+[21:42:50] *** YSI Info: YSI Script ID: 1
+[21:42:50]  |                                        | 
+[21:42:50]  | Server:      0.3.7-R2 (Windows)        | 
+[21:42:50]  | Started:     17 Oct 2023 - 21:42:49    | 
+[21:42:50]  |                                        | 
+[21:42:50]  | Compiler:    3.10.10 (Windows)         | 
+[21:42:50]  | Includes:    0.3DL                     | 
+[21:42:50]  | Codepage:    <none>                    | 
+[21:42:50]  | Built:       17 Oct 2023 - 21:42:44    | 
+[21:42:50]  |                                        | 
+[21:42:50]  | YSI:         v5.07.3082                | 
+[21:42:50]  | Master:      1                         | 
+[21:42:50]  |                                        | 
+[21:42:50]  | JIT:         <none>                    | 
+[21:42:50]  | Crashdetect: <found>                   | 
+[21:42:50]  |                                        | 
+[21:42:50]  ========================================== 
+[21:42:50]  
+[21:42:50] [debug] Long callback execution detected (hang or performance issue)
+[21:42:50] [debug] AMX backtrace:
+[21:42:50] [debug] #0 0000b7f4 in AMX_GetEntryPrefix (E_AMX_TABLE:table=0, idx=84, &buffer=@02d55d9c 0, pattern=1598650688) at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_amx_impl.inc:1156
+[21:42:50] [debug] #1 0000b994 in AMX_GetPointerPrefix (E_AMX_TABLE:table=0, idx=0, &buffer=@02d55dbc 0, pattern=1598650688) at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_amx_impl.inc:2016
+[21:42:50] [debug] #2 0001002c in ScriptInit_PreInitFuncs_ () at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_core_entry.inc:544
+[21:42:50] [debug] #3 000082b4 in PawnRakNet_OnGameModeInit () at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_scriptinit_impl.inc:1835
+[21:42:50] [debug] #4 00005f78 in SSCANF_OnGameModeInit ()  at D:\devshit\dmbase\pawno\include\Pawn.RakNet.inc:1153
+[21:42:50] [debug] #5 00002218 in public OnPlayerText () at D:\devshit\dmbase\pawno\include\sscanf2.inc:1066
+[21:42:50]  
+[21:42:50] MySQL conectou.
+[21:42:50] arenaInfo[arenaId] 103
+[21:42:50] base dm v1.0 - by pushline
+[21:42:50] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[21:42:53] 
+[21:42:53] Server Plugins
+[21:42:53] --------------
+[21:42:53]  Loading plugin: crashdetect
+[21:42:53]   CrashDetect plugin 4.21
+[21:42:53]   Loaded.
+[21:42:53]  Loading plugin: streamer
+[21:42:53] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[21:42:53]   Loaded.
+[21:42:53]  Loading plugin: mysql
+[21:42:53]  >> plugin.mysql: R41-4 successfully loaded.
+[21:42:53]   Loaded.
+[21:42:53]  Loading plugin: pawnraknet
+[21:42:53] [Pawn.RakNet] plugin v1.6.0 loading...
+[21:42:53] [Pawn.RakNet] 
+
+    | Pawn.RakNet 1.6.0 | 2016 - 2023
+    |--------------------------------
+    | Author and maintainer: katursis
+
+
+    | Compiled: Feb 12 2023 at 19:36:19
+    |--------------------------------------------------------------
+    | Repository: https://github.com/katursis/Pawn.RakNet
+    |--------------------------------------------------------------
+    | Wiki: https://github.com/katursis/Pawn.RakNet/wiki
+
+[21:42:53]   Loaded.
+[21:42:53]  Loading plugin: sscanf
+[21:42:53] 
+[21:42:53]  ===============================
+[21:42:53] 
+[21:42:53]       sscanf plugin loaded.     
+[21:42:53] 
+[21:42:53]          Version: 2.13.8
+[21:42:53] 
+[21:42:53]    (c) 2022 Alex "Y_Less" Cole  
+[21:42:53] 
+[21:42:53]  ===============================
+[21:42:53] 
+[21:42:53]   Loaded.
+[21:42:53]  Loading plugin: samp_bcrypt
+[21:42:53] [SampBcrypt] [info]: Version: 0.4.0
+[21:42:53]   Loaded.
+[21:42:53]  Loaded 6 plugins.
+
+[21:42:53] 
+[21:42:53] Filterscripts
+[21:42:53] ---------------
+[21:42:53]   Loaded 0 filterscripts.
+
+[21:42:53]  
+[21:42:53]  
+[21:42:53]          ==============================================================
+[21:42:53]          |                                                            |
+[21:42:53]          |                                                            |
+[21:42:53]          |    YYYYYYY       YYYYYYY    SSSSSSSSSSSSSSS  IIIIIIIIII    |
+[21:42:53]          |    Y:::::Y       Y:::::Y  SS:::::::::::::::S I::::::::I    |
+[21:42:53]          |    Y:::::Y       Y:::::Y S:::::SSSSSS::::::S I::::::::I    |
+[21:42:53]          |    Y::::::Y     Y::::::Y S:::::S     SSSSSSS II::::::II    |
+[21:42:53]          |    YYY:::::Y   Y:::::YYY S:::::S               I::::I      |
+[21:42:53]          |       Y:::::Y Y:::::Y    S:::::S               I::::I      |
+[21:42:53]          |        Y:::::Y:::::Y      S::::SSSS            I::::I      |
+[21:42:53]          |         Y:::::::::Y        SS::::::SSSSS       I::::I      |
+[21:42:53]          |          Y:::::::Y           SSS::::::::SS     I::::I      |
+[21:42:53]          |           Y:::::Y               SSSSSS::::S    I::::I      |
+[21:42:53]          |           Y:::::Y                    S:::::S   I::::I      |
+[21:42:53]          |           Y:::::Y                    S:::::S   I::::I      |
+[21:42:53]          |           Y:::::Y        SSSSSSS     S:::::S II::::::II    |
+[21:42:53]          |        YYYY:::::YYYY     S::::::SSSSSS:::::S I::::::::I    |
+[21:42:53]          |        Y:::::::::::Y     S:::::::::::::::SS  I::::::::I    |
+[21:42:53]          |        YYYYYYYYYYYYY      SSSSSSSSSSSSSSS    IIIIIIIIII    |
+[21:42:53]          |                                                            |
+[21:42:53]          |                                                            |
+[21:42:53]          |                      (c) 2021 MPL v1.1                     |
+[21:42:53]          |            Alex "Y_Less" Cole and contributors.            |
+[21:42:53]          |                                                            |
+[21:42:53]          |                                                            |
+[21:42:53]          ==============================================================
+[21:42:53]  
+[21:42:53]  
+[21:42:53]  ========================================== 
+[21:42:53]  |                                        | 
+[21:42:53]  |  Missing YSI scriptfiles directories:  | 
+[21:42:53]  |                                        | 
+[21:42:53]  |      /scriptfiles/YSI/fixes/           | 
+[21:42:53]  |      /scriptfiles/YSI/temp/            | 
+[21:42:53]  |                                        | 
+[21:42:53]  ========================================== 
+[21:42:53]  |                                        | 
+[21:42:53]  |   Generating code, this may take a     | 
+[21:42:53]  |  little bit of time.  Note that this   | 
+[21:42:53]  |  code generation works best with the   | 
+[21:42:53]  |     JIT plugin, which you are not      | 
+[21:42:53]  |     currently using.  Get it here:     | 
+[21:42:53]  |                                        | 
+[21:42:53]  |       https://git.io/jit-plugin        | 
+[21:42:53]  |                                        | 
+[21:42:53]  |             Please wait...             | 
+[21:42:53]  |                                        | 
+[21:42:53]  |             Done in 121ms!             | 
+[21:42:53]  |                                        | 
+[21:42:53]  ========================================== 
+[21:42:53]   Filterscript '../scriptfiles/callbackfix.amx' loaded.
+[21:42:53] *** YSI Info: YSI Script ID: 1
+[21:42:53]  |                                        | 
+[21:42:53]  | Server:      0.3.7-R2 (Windows)        | 
+[21:42:53]  | Started:     17 Oct 2023 - 21:42:53    | 
+[21:42:53]  |                                        | 
+[21:42:53]  | Compiler:    3.10.10 (Windows)         | 
+[21:42:53]  | Includes:    0.3DL                     | 
+[21:42:53]  | Codepage:    <none>                    | 
+[21:42:53]  | Built:       17 Oct 2023 - 21:42:44    | 
+[21:42:53]  |                                        | 
+[21:42:53]  | YSI:         v5.07.3082                | 
+[21:42:53]  | Master:      1                         | 
+[21:42:53]  |                                        | 
+[21:42:53]  | JIT:         <none>                    | 
+[21:42:53]  | Crashdetect: <found>                   | 
+[21:42:53]  |                                        | 
+[21:42:53]  ========================================== 
+[21:42:53]  
+[21:42:53] [debug] Long callback execution detected (hang or performance issue)
+[21:42:53] [debug] AMX backtrace:
+[21:42:53] [debug] #0 0000b7f4 in AMX_GetEntryPrefix (E_AMX_TABLE:table=0, idx=84, &buffer=@02d55d9c 0, pattern=1598650688) at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_amx_impl.inc:1156
+[21:42:53] [debug] #1 0000b994 in AMX_GetPointerPrefix (E_AMX_TABLE:table=0, idx=0, &buffer=@02d55dbc 0, pattern=1598650688) at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_amx_impl.inc:2016
+[21:42:53] [debug] #2 0001002c in ScriptInit_PreInitFuncs_ () at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_core_entry.inc:544
+[21:42:53] [debug] #3 000082b4 in PawnRakNet_OnGameModeInit () at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_scriptinit_impl.inc:1835
+[21:42:53] [debug] #4 00005f78 in SSCANF_OnGameModeInit ()  at D:\devshit\dmbase\pawno\include\Pawn.RakNet.inc:1153
+[21:42:53] [debug] #5 00002218 in public OnPlayerText () at D:\devshit\dmbase\pawno\include\sscanf2.inc:1066
+[21:42:53]  
+[21:42:53] MySQL conectou.
+[21:42:53] arenaInfo[arenaId] 18
+[21:42:53] base dm v1.0 - by pushline
+[21:42:53] Number of vehicle models: 0
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[21:42:56] 
+[21:42:56] Server Plugins
+[21:42:56] --------------
+[21:42:56]  Loading plugin: crashdetect
+[21:42:56]   CrashDetect plugin 4.21
+[21:42:56]   Loaded.
+[21:42:56]  Loading plugin: streamer
+[21:42:56] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[21:42:56]   Loaded.
+[21:42:56]  Loading plugin: mysql
+[21:42:56]  >> plugin.mysql: R41-4 successfully loaded.
+[21:42:56]   Loaded.
+[21:42:56]  Loading plugin: pawnraknet
+[21:42:56] [Pawn.RakNet] plugin v1.6.0 loading...
+[21:42:56] [Pawn.RakNet] 
+
+    | Pawn.RakNet 1.6.0 | 2016 - 2023
+    |--------------------------------
+    | Author and maintainer: katursis
+
+
+    | Compiled: Feb 12 2023 at 19:36:19
+    |--------------------------------------------------------------
+    | Repository: https://github.com/katursis/Pawn.RakNet
+    |--------------------------------------------------------------
+    | Wiki: https://github.com/katursis/Pawn.RakNet/wiki
+
+[21:42:56]   Loaded.
+[21:42:56]  Loading plugin: sscanf
+[21:42:56] 
+[21:42:56]  ===============================
+[21:42:56] 
+[21:42:56]       sscanf plugin loaded.     
+[21:42:56] 
+[21:42:56]          Version: 2.13.8
+[21:42:56] 
+[21:42:56]    (c) 2022 Alex "Y_Less" Cole  
+[21:42:56] 
+[21:42:56]  ===============================
+[21:42:56] 
+[21:42:56]   Loaded.
+[21:42:56]  Loading plugin: samp_bcrypt
+[21:42:56] [SampBcrypt] [info]: Version: 0.4.0
+[21:42:56]   Loaded.
+[21:42:56]  Loaded 6 plugins.
+
+[21:42:56] 
+[21:42:56] Filterscripts
+[21:42:56] ---------------
+[21:42:56]   Loaded 0 filterscripts.
+
+[21:42:56]  
+[21:42:56]  
+[21:42:56]          ==============================================================
+[21:42:56]          |                                                            |
+[21:42:56]          |                                                            |
+[21:42:56]          |    YYYYYYY       YYYYYYY    SSSSSSSSSSSSSSS  IIIIIIIIII    |
+[21:42:56]          |    Y:::::Y       Y:::::Y  SS:::::::::::::::S I::::::::I    |
+[21:42:56]          |    Y:::::Y       Y:::::Y S:::::SSSSSS::::::S I::::::::I    |
+[21:42:56]          |    Y::::::Y     Y::::::Y S:::::S     SSSSSSS II::::::II    |
+[21:42:56]          |    YYY:::::Y   Y:::::YYY S:::::S               I::::I      |
+[21:42:56]          |       Y:::::Y Y:::::Y    S:::::S               I::::I      |
+[21:42:56]          |        Y:::::Y:::::Y      S::::SSSS            I::::I      |
+[21:42:56]          |         Y:::::::::Y        SS::::::SSSSS       I::::I      |
+[21:42:56]          |          Y:::::::Y           SSS::::::::SS     I::::I      |
+[21:42:56]          |           Y:::::Y               SSSSSS::::S    I::::I      |
+[21:42:56]          |           Y:::::Y                    S:::::S   I::::I      |
+[21:42:56]          |           Y:::::Y                    S:::::S   I::::I      |
+[21:42:56]          |           Y:::::Y        SSSSSSS     S:::::S II::::::II    |
+[21:42:56]          |        YYYY:::::YYYY     S::::::SSSSSS:::::S I::::::::I    |
+[21:42:56]          |        Y:::::::::::Y     S:::::::::::::::SS  I::::::::I    |
+[21:42:56]          |        YYYYYYYYYYYYY      SSSSSSSSSSSSSSS    IIIIIIIIII    |
+[21:42:56]          |                                                            |
+[21:42:56]          |                                                            |
+[21:42:56]          |                      (c) 2021 MPL v1.1                     |
+[21:42:56]          |            Alex "Y_Less" Cole and contributors.            |
+[21:42:56]          |                                                            |
+[21:42:56]          |                                                            |
+[21:42:56]          ==============================================================
+[21:42:56]  
+[21:42:56]  
+[21:42:56]  ========================================== 
+[21:42:56]  |                                        | 
+[21:42:56]  |  Missing YSI scriptfiles directories:  | 
+[21:42:56]  |                                        | 
+[21:42:56]  |      /scriptfiles/YSI/fixes/           | 
+[21:42:56]  |      /scriptfiles/YSI/temp/            | 
+[21:42:56]  |                                        | 
+[21:42:56]  ========================================== 
+[21:42:56]  |                                        | 
+[21:42:56]  |   Generating code, this may take a     | 
+[21:42:56]  |  little bit of time.  Note that this   | 
+[21:42:56]  |  code generation works best with the   | 
+[21:42:56]  |     JIT plugin, which you are not      | 
+[21:42:56]  |     currently using.  Get it here:     | 
+[21:42:56]  |                                        | 
+[21:42:56]  |       https://git.io/jit-plugin        | 
+[21:42:56]  |                                        | 
+[21:42:56]  |             Please wait...             | 
+[21:42:57]  |                                        | 
+[21:42:57]  |             Done in 124ms!             | 
+[21:42:57]  |                                        | 
+[21:42:57]  ========================================== 
+[21:42:57]   Filterscript '../scriptfiles/callbackfix.amx' loaded.
+[21:42:57] *** YSI Info: YSI Script ID: 1
+[21:42:57]  |                                        | 
+[21:42:57]  | Server:      0.3.7-R2 (Windows)        | 
+[21:42:57]  | Started:     17 Oct 2023 - 21:42:56    | 
+[21:42:57]  |                                        | 
+[21:42:57]  | Compiler:    3.10.10 (Windows)         | 
+[21:42:57]  | Includes:    0.3DL                     | 
+[21:42:57]  | Codepage:    <none>                    | 
+[21:42:57]  | Built:       17 Oct 2023 - 21:42:44    | 
+[21:42:57]  |                                        | 
+[21:42:57]  | YSI:         v5.07.3082                | 
+[21:42:57]  | Master:      1                         | 
+[21:42:57]  |                                        | 
+[21:42:57]  | JIT:         <none>                    | 
+[21:42:57]  | Crashdetect: <found>                   | 
+[21:42:57]  |                                        | 
+[21:42:57]  ========================================== 
+[21:42:57]  
+[21:42:57] [debug] Long callback execution detected (hang or performance issue)
+[21:42:57] [debug] AMX backtrace:
+[21:42:57] [debug] #0 0000b7f4 in AMX_GetEntryPrefix (E_AMX_TABLE:table=0, idx=84, &buffer=@02d55d9c 0, pattern=1598650688) at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_amx_impl.inc:1156
+[21:42:57] [debug] #1 0000b994 in AMX_GetPointerPrefix (E_AMX_TABLE:table=0, idx=0, &buffer=@02d55dbc 0, pattern=1598650688) at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_amx_impl.inc:2016
+[21:42:57] [debug] #2 0001002c in ScriptInit_PreInitFuncs_ () at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_core_entry.inc:544
+[21:42:57] [debug] #3 000082b4 in PawnRakNet_OnGameModeInit () at D:\devshit\dmbase\pawno\include\YSI_Coding\y_va\..\..\YSI_Core\y_core\y_scriptinit_impl.inc:1835
+[21:42:57] [debug] #4 00005f78 in SSCANF_OnGameModeInit ()  at D:\devshit\dmbase\pawno\include\Pawn.RakNet.inc:1153
+[21:42:57] [debug] #5 00002218 in public OnPlayerText () at D:\devshit\dmbase\pawno\include\sscanf2.inc:1066
+[21:42:57]  
+[21:42:57] MySQL conectou.
+[21:42:57] arenaInfo[arenaId] 96
+[21:42:57] base dm v1.0 - by pushline
+[21:42:57] Number of vehicle models: 0
+[21:43:00] [connection] 127.0.0.1:64158 requests connection cookie.
+[21:43:01] [connection] incoming connection: 127.0.0.1:64158 id: 0
+[21:43:01] [join] pushline has joined the server (0:127.0.0.1)
+[21:43:23] [part] pushline has left the server (0:1)

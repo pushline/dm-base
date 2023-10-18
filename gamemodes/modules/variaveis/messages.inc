@@ -8,3 +8,5 @@
 #define LOGIN_MSG1	">> Bem vindo novamente, {6B54B6}%s!"
 #define LOGIN_MSG2	">> Seu nível admin é: %s."
 #define LOGIN_MSG3	">> Seu último login foi em: %s."
+
+#define ARENA_ENDED_MSG		">> A arena %s (ID: %d) acabou, a próxima é %s (ID: %d)."
