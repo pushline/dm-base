@@ -22,15 +22,7 @@
 #include <a_zone> // https://github.com/pushline/Advanced-Gang-Zones
 
 // modulos
-#include "modules/variaveis/defines.inc"
-#include "modules/variaveis/messages.inc"
-#include "modules/variaveis/global.inc"
-#include "modules/variaveis/dialogs.inc"
-
-#include "modules/arenas/arena.inc"
-
-#include "modules/servidor/db.inc"
-#include "modules/servidor/funcoes.inc"
+#include "modules/entry.inc"
 
 main()
 {
@@ -41,7 +33,7 @@ public OnGameModeInit()
 {
 	DisableCrashDetectLongCall();
 	Command_SetDeniedReturn(true); // Prevenir mensagem "Unknown Command" do ycmd
-	mysql_log(ERROR);
+	mysql_log(ERROR | WARNING);
 	ligarDB();
 	SetGameModeText("DM BASE");
 	iniciarServidor();
