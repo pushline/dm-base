@@ -1,4 +1,7 @@
-#include <a_samp>
+#include <open.mp>
+#undef MAX_PLAYERS
+#define MAX_PLAYERS 50 // mude no config.json caso mude aqui
+
 #define YSI_YES_HEAP_MALLOC
 
 // plugins
@@ -20,6 +23,7 @@
 #include <sort-inline>
 #include <strlib>
 #include <a_zone> // https://github.com/pushline/Advanced-Gang-Zones
+#include <colandreas>
 
 // modulos
 #include "modules/entry.inc"
@@ -33,8 +37,10 @@ public OnGameModeInit()
 {
 	DisableCrashDetectLongCall();
 	Command_SetDeniedReturn(true); // Prevenir mensagem "Unknown Command" do ycmd
+	
 	mysql_log(ERROR | WARNING);
 	ligarDB();
+
 	SetGameModeText("DM BASE");
 	iniciarServidor();
 
@@ -58,6 +64,7 @@ public OnPlayerConnect(playerid)
 
 	PreloadAnims(playerid);
 	SetPlayerVirtualWorld(playerid, playerid);
+
 	SetSpawnInfo(playerid, 0, 1, 0, 0, 0, 0, WEAPON_FIST, 0, WEAPON_FIST, 0, WEAPON_FIST, 0);
 
 	mysql_format(conexaoDB, queryGlobal, sizeof(queryGlobal),
@@ -100,17 +107,10 @@ public OnPlayerSpawn(playerid)
 	SetPlayerInterior(playerid, 0);
 	SetPlayerWorldBounds(playerid, 20000.0, -20000.0, 20000.0, -20000.0);
 
-	// TODO: Spawn on arena
-
-	if(IsPlayerInAnyVehicle(playerid))
-		RemovePlayerFromVehicle(playerid);
-
-	new timestamp = gettime();
-
 	if(User[playerid][isAfk])
 		setAfk(playerid);
 	else
-		Respawn(playerid, timestamp);
+		SpawnPlayerOnArena(playerid);
 
 	if(GetPVarInt(playerid, "firstSpawn") != 0)
 	{

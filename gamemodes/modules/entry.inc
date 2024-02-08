@@ -2,6 +2,7 @@
 #include "modules/variaveis/messages.inc"
 #include "modules/variaveis/global.inc"
 #include "modules/variaveis/dialogs.inc"
+#include "modules/variaveis/buildings.inc"
 
 #include "modules/arenas/arena.inc"
 

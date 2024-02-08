@@ -18,9 +18,9 @@
  * </library>
  */
 
-#pragma library String
-
 /// <p/>
+
+#pragma library String
 
 /**
  * <library>string</library>
@@ -107,9 +107,12 @@ native strcat(dest[], const source[], maxlength = sizeof (dest));
  * <seealso name="strcat"/>
  * <returns>The length of the new destination string.</returns>
  */
-stock strcopy(dest[], const source[], maxlength = sizeof (dest))
+/*
+native strcopy(dest[], const source[], maxlength = sizeof (dest));
+*/
+stock strcopy(__dest[], const __source[], __maxlength = sizeof (__dest))
 {
-	return strcat((dest[0] = EOS, dest), source, maxlength);
+	return strcat((__dest[0] = EOS, __dest), __source, __maxlength);
 }
 
 /**
@@ -287,34 +290,43 @@ native bool:ispacked(const string[]);
 
 /**
  * <library>string</library>
+ * <summary>Convert values to text.</summary>
+ * <param name="dest">The string that will contain the formatted result.</param>
+ * <param name="size">The maximum number of <em>cells</em> that the dest parameter can hold. This value includes the zero terminator.</param>
+ * <param name="pack">If <c>true</c>, the string in <c>dest</c> will become a packed string. Otherwise, the string in dest will be unpacked.
+ * </param>
+ * <param name="format">The string to store in <c>dest</c>, which may contain placeholders (see the notes below).</param>
+ * <param name="...">The parameters for the placeholders.  These values may be untagged, weakly tagged, or tagged as rational values.</param>
+ * <remarks>
+ * The format parameter is a string that may contain embedded placeholder codes:
+ * <ul>
+ * <li><c>%b</c> - store a number at this position in binary radix</li>
+ * <li><c>%c</c> - store a character at this position</li>
+ * <li><c>%d</c> - store a number at this position in decimal radix (same as <c>%i</c>)</li>
+ * <li><c>%i</c> - store a number at this position in decimal radix (same as <c>%d</c>)</li>
+ * <li><c>%f</c> - store a floating point number at this position</li>
+ * <li><c>%s</c> - store a character string at this position</li>
+ * <li><c>%x</c> - store a number at this position in hexadecimal radix</li>
+ * <li><c>%q</c> - store a string with special characters escaped for SQLite</li>
+ * <li><c>%%</c> - store a literal <c>%</c></li>
+ * The values for the placeholders follow as parameters in the call.
+ * <p/>
+ * You may optionally put a number between the <c>"%"</c> and the letter of the placeholder code.
+ * This number indicates the field width; if the size of the parameter to print at the position of
+ * the placeholder is smaller than the field width, the field is expanded with spaces.  A negative
+ * number left-aligns the text (right-pads).
+ * <p/>
+ * You may optionally put a <c>.</c> followed by a number between the <c>"%"</c> and the letter of
+ * the placeholder code, after the optional width.  This number indicates the field precision; it
+ * will truncate the output in some way.  For <c>%f</c> this is the number of decimal points to
+ * show, for <c>%s</c> it is the number of characters to show.
+ * <p/>
+ * The <c>strformat</c> function works similarly to the "C" function sprintf.
+ * </remarks>
+ * <returns>This function always returns 0.</returns>
  */
-native __strformat(dest[], size = sizeof (dest), const format[], {Float, _}:...) = format;
-/*
+#pragma deprecated Use `format`.
 native strformat(dest[], size = sizeof (dest), bool:pack = true, const format[], {Fixed, Float, _}:...);
-*/
-#define strformat(%0,%1,%2,%3) __strformat(%0,%1,%3)
-// This is a macro not a stock because forwarding all variable parameters is not easy.  But would
-// look something like this, if there wasn't a bug with `SYSREQ.C` and otherwise unused natives:
-//stock strformat(dest[], size = sizeof (dest), bool:pack = true, const format[], {Float, _}:...)
-//{
-//	static ret;
-//	#emit LOAD.S.pri       16
-//	#emit LOAD.S.pri       20
-//	#emit POP.alt
-//	#emit SCTRL 5
-//	#emit POP.pri
-//	#emit STOR.pri         ret
-//	#emit POP.pri
-//	#emit ADD.C            0xFFFFFFFC
-//	#emit POP.alt
-//	#emit SWAP.alt
-//	#emit PUSH.pri
-//	#emit SYSREQ.C         format
-//	#emit PUSH ret
-//	#emit LCTRL            5
-//	#emit PUSH.pri
-//	#emit RETN
-//}
 
 /**
  * <library>string</library>
@@ -382,7 +394,7 @@ native uuencode(dest[], const source[], numbytes, maxlength = sizeof (dest));
  * <seealso name="strcat"/>
  * <returns><b><c>true</c></b> on success, <b><c>false</c></b> on failure.</returns>
  */
-native memcpy(dest[], const source[], index = 0, numbytes, maxlength = sizeof (dest));
+native bool:memcpy(dest[], const source[], index = 0, numbytes, maxlength = sizeof (dest));
 
 /**
  * <library>string</library>
@@ -398,8 +410,21 @@ native memcpy(dest[], const source[], index = 0, numbytes, maxlength = sizeof (d
  * <returns><b><c>true</c></b> if the strings match each other on given length, <b><c>false</c></b>
  * otherwise.</returns>
  */
-stock bool:strequal(const string1[], const string2[], bool:ignorecase = false, length = cellmax)
+/*
+native bool:strequal(const string1[], const string2[], bool:ignorecase = false, length = cellmax);
+*/
+stock bool:strequal(const __string1[], const __string2[], bool:__ignorecase = false, __length = cellmax)
 {
-	return strcmp(string1, string2, ignorecase, length) == 0;
+	if (__string1[0] == '\0')
+	{
+		// Only need to check the first character.
+		return __string2[0] == '\0';
+	}
+	if (__string2[0] == '\0')
+	{
+		// Because we already know that `string1` isn't the same.
+		return false;
+	}
+	return strcmp(__string1, __string2, __ignorecase, __length) == 0;
 }
 

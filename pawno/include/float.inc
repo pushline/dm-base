@@ -22,11 +22,12 @@
  * </library>
  */
 
+/// <p/>
+
 #pragma library Float
 #pragma rational Float
 
 /// <p/>
-
 /**
  * <library>float</library>
  * <summary>Different methods of rounding.</summary>
@@ -42,7 +43,6 @@ enum floatround_method
 static stock floatround_method:_@floatround_method() { return floatround_method; }
 
 /// <p/>
-
 /**
  * <library>float</library>
  */
@@ -70,9 +70,22 @@ native Float:float(value);
  * <param name="string">The string to convert into a float</param>
  * <seealso name="floatround"/>
  * <seealso name="float"/>
+ * <seealso name="strfloat"/>
  * <returns>The requested float value.</returns>
  */
 native Float:floatstr(const string[]);
+
+/**
+ * <library>float</library>
+ * <summary>Convert from text (string) to floating point.</summary>
+ * <param name="string">A string containing a floating point number in characters.  This may be
+ * either a packed or unpacked string.  The string may specify a fractional part, for example
+ * <c>"123.45"</c>.</param>
+ * <seealso name="float"/>
+ * <seealso name="floatstr"/>
+ * <returns>The value in the string, or zero if the string did not start with a valid number.</returns>
+ */
+native Float:strfloat(const string[]) = floatstr;
 
 /**
  * <library>float</library>
@@ -207,11 +220,11 @@ native Float:floatlog(Float:value, Float:base = 10.0);
  * <param name="mode">The angle mode (see below) to use, depending on the value entered (optional=<b><c>radian</c></b>)</param>
  * <seealso name="floattan"/>
  * <seealso name="floatcos"/>
- * <remarks>GTA/SA-MP use <b>degrees</b> for angles in most circumstances, for example
+ * <remarks>GTA/open.mp use <b>degrees</b> for angles in most circumstances, for example
  * <a href="#GetPlayerFacingAngle">GetPlayerFacingAngle</a>.
  *  Therefore, it is most likely you'll want to use the <b>degrees</b> angle mode, not radians. </remarks>
- * <remarks>Also note that angles in GTA are counterclockwise; 270° is East and 90° is West.  South
- * is still 180° and North still 0°/360°. </remarks>
+ * <remarks>Also note that angles in GTA are counterclockwise; 270 is East and 90 is West.  South
+ * is still 180 and North still 0/360. </remarks>
  * <remarks>
  *   <b>Angle modes:</b><p/>
  *   <ul>
@@ -231,11 +244,11 @@ native Float:floatsin(Float:value, anglemode:mode = radian);
  * <param name="mode">The angle mode (see below) to use, depending on the value entered (optional=<b><c>radian</c></b>)</param>
  * <seealso name="floatsin"/>
  * <seealso name="floattan"/>
- * <remarks>GTA/SA-MP use <b>degrees</b> for angles in most circumstances, for example
+ * <remarks>GTA/open.mp use <b>degrees</b> for angles in most circumstances, for example
  * <a href="#GetPlayerFacingAngle">GetPlayerFacingAngle</a>.
  *  Therefore, it is most likely you'll want to use the <b>degrees</b> angle mode, not radians. </remarks>
- * <remarks>Also note that angles in GTA are counterclockwise; 270° is East and 90° is West.  South
- * is still 180° and North still 0°/360°. </remarks>
+ * <remarks>Also note that angles in GTA are counterclockwise; 270 is East and 90 is West.  South
+ * is still 180 and North still 0/360. </remarks>
  * <remarks>
  *   <b>Angle modes:</b><p/>
  *   <ul>
@@ -255,11 +268,11 @@ native Float:floatcos(Float:value, anglemode:mode = radian);
  * <param name="mode">The angle mode to use, depending on the value entered</param>
  * <seealso name="floatsin"/>
  * <seealso name="floatcos"/>
- * <remarks>GTA/SA-MP use <b>degrees</b> for angles in most circumstances, for example
+ * <remarks>GTA/open.mp use <b>degrees</b> for angles in most circumstances, for example
  * <a href="#GetPlayerFacingAngle">GetPlayerFacingAngle</a>.
  *  Therefore, it is most likely you'll want to use the <b>degrees</b> angle mode, not radians. </remarks>
- * <remarks>Also note that angles in GTA are counterclockwise; 270° is East and 90° is West.  South
- * is still 180° and North still 0°/360°. </remarks>
+ * <remarks>Also note that angles in GTA are counterclockwise; 270 is East and 90 is West.  South
+ * is still 180 and North still 0/360. </remarks>
  * <remarks>
  *   <b>Angle modes:</b><p/>
  *   <ul>
@@ -309,209 +322,287 @@ native Float:operator=(oper) = float;
 /**
  * <library>float</library>
  */
-stock Float:operator++(Float:oper)
+/*
+native Float:operator++(Float:oper);
+*/
+stock Float:operator++(Float:__oper)
 {
-	return oper + 1.0;
+	return __oper + 1.0;
 }
 
 /**
  * <library>float</library>
  */
-stock Float:operator--(Float:oper)
+/*
+native Float:operator--(Float:oper);
+*/
+stock Float:operator--(Float:__oper)
 {
-	return oper - 1.0;
+	return __oper - 1.0;
 }
 
 /**
  * <library>float</library>
  */
-stock Float:operator-(Float:oper)
+/*
+native Float:operator-(Float:oper);
+*/
+stock Float:operator-(Float:__oper)
 {
-	return oper ^ Float:cellmin;                /* IEEE values are sign/magnitude */
+	return __oper ^ Float:cellmin;                /* IEEE values are sign/magnitude */
 }
 
 /**
  * <library>float</library>
  */
-stock Float:operator*(Float:oper1, oper2)
+/*
+native Float:operator*(Float:oper1, oper2);
+*/
+stock Float:operator*(Float:__oper1, __oper2)
 {
-	return floatmul(oper1, float(oper2));       /* "*" is commutative */
+	return floatmul(__oper1, float(__oper2)); /* "*" is commutative */
 }
 
 /**
  * <library>float</library>
  */
-stock Float:operator/(Float:oper1, oper2)
+/*
+native Float:operator/(Float:oper1, oper2);
+*/
+stock Float:operator/(Float:__oper1, __oper2)
 {
-	return floatdiv(oper1, float(oper2));
+	return floatdiv(__oper1, float(__oper2));
 }
 
 /**
  * <library>float</library>
  */
-stock Float:operator/(oper1, Float:oper2)
+/*
+native Float:operator/(oper1, Float:oper2);
+*/
+stock Float:operator/(__oper1, Float:__oper2)
 {
-	return floatdiv(float(oper1), oper2);
+	return floatdiv(float(__oper1), __oper2);
 }
 
 /**
  * <library>float</library>
  */
-stock Float:operator+(Float:oper1, oper2)
+/*
+native Float:operator+(Float:oper1, oper2);
+*/
+stock Float:operator+(Float:__oper1, __oper2)
 {
-	return floatadd(oper1, float(oper2));       /* "+" is commutative */
+	return floatadd(__oper1, float(__oper2)); /* "+" is commutative */
 }
 
 /**
  * <library>float</library>
  */
-stock Float:operator-(Float:oper1, oper2)
+/*
+native Float:operator-(Float:oper1, oper2);
+*/
+stock Float:operator-(Float:__oper1, __oper2)
 {
-	return floatsub(oper1, float(oper2));
+	return floatsub(__oper1, float(__oper2));
 }
 
 /**
  * <library>float</library>
  */
-stock Float:operator-(oper1, Float:oper2)
+/*
+native Float:operator-(oper1, Float:oper2);
+*/
+stock Float:operator-(__oper1, Float:__oper2)
 {
-	return floatsub(float(oper1), oper2);
+	return floatsub(float(__oper1), __oper2);
 }
 
 /**
  * <library>float</library>
  */
-stock bool:operator==(Float:oper1, Float:oper2)
+/*
+native bool:operator==(Float:oper1, Float:oper2);
+*/
+stock bool:operator==(Float:__oper1, Float:__oper2)
 {
-	return floatcmp(oper1, oper2) == 0;
+	return floatcmp(__oper1, __oper2) == 0;
 }
 
 /**
  * <library>float</library>
  */
-stock bool:operator==(Float:oper1, oper2)
+/*
+native bool:operator==(Float:oper1, oper2);
+*/
+stock bool:operator==(Float:__oper1, __oper2)
 {
-	return floatcmp(oper1, float(oper2)) == 0;  /* "==" is commutative */
+	return floatcmp(__oper1, float(__oper2)) == 0; /* "==" is commutative */
 }
 
 /**
  * <library>float</library>
  */
-stock bool:operator!=(Float:oper1, Float:oper2)
+/*
+native bool:operator!=(Float:oper1, Float:oper2);
+*/
+stock bool:operator!=(Float:__oper1, Float:__oper2)
 {
-	return floatcmp(oper1, oper2) != 0;
+	return floatcmp(__oper1, __oper2) != 0;
 }
 
 /**
  * <library>float</library>
  */
-stock bool:operator!=(Float:oper1, oper2)
+/*
+native bool:operator!=(Float:oper1, Float:oper2);
+*/
+stock bool:operator!=(Float:__oper1, __oper2)
 {
-	return floatcmp(oper1, float(oper2)) != 0;  /* "!=" is commutative */
+	return floatcmp(__oper1, float(__oper2)) != 0; /* "!=" is commutative */
 }
 
 /**
  * <library>float</library>
  */
-stock bool:operator>(Float:oper1, Float:oper2)
+/*
+native bool:operator>(Float:oper1, Float:oper2);
+*/
+stock bool:operator>(Float:__oper1, Float:__oper2)
 {
-	return floatcmp(oper1, oper2) > 0;
+	return floatcmp(__oper1, __oper2) > 0;
 }
 
 /**
  * <library>float</library>
  */
-stock bool:operator>(Float:oper1, oper2)
+/*
+native bool:operator>(Float:oper1, oper2);
+*/
+stock bool:operator>(Float:__oper1, __oper2)
 {
-	return floatcmp(oper1, float(oper2)) > 0;
+	return floatcmp(__oper1, float(__oper2)) > 0;
 }
 
 /**
  * <library>float</library>
  */
-stock bool:operator>(oper1, Float:oper2)
+/*
+native bool:operator>(oper1, Float:oper2);
+*/
+stock bool:operator>(__oper1, Float:__oper2)
 {
-	return floatcmp(float(oper1), oper2) > 0;
+	return floatcmp(float(__oper1), __oper2) > 0;
 }
 
 /**
  * <library>float</library>
  */
-stock bool:operator>=(Float:oper1, Float:oper2)
+/*
+native bool:operator>=(Float:oper1, Float:oper2);
+*/
+stock bool:operator>=(Float:__oper1, Float:__oper2)
 {
-	return floatcmp(oper1, oper2) >= 0;
+	return floatcmp(__oper1, __oper2) >= 0;
 }
 
 /**
  * <library>float</library>
  */
-stock bool:operator>=(Float:oper1, oper2)
+/*
+native bool:operator>=(Float:oper1, oper2);
+*/
+stock bool:operator>=(Float:__oper1, __oper2)
 {
-	return floatcmp(oper1, float(oper2)) >= 0;
+	return floatcmp(__oper1, float(__oper2)) >= 0;
 }
 
 /**
  * <library>float</library>
  */
-stock bool:operator>=(oper1, Float:oper2)
+/*
+native bool:operator>=(oper1, Float:oper2);
+*/
+stock bool:operator>=(__oper1, Float:__oper2)
 {
-	return floatcmp(float(oper1), oper2) >= 0;
+	return floatcmp(float(__oper1), __oper2) >= 0;
 }
 
 /**
  * <library>float</library>
  */
-stock bool:operator<(Float:oper1, Float:oper2)
+/*
+native bool:operator<(Float:oper1, Float:oper2);
+*/
+stock bool:operator<(Float:__oper1, Float:__oper2)
 {
-	return floatcmp(oper1, oper2) < 0;
+	return floatcmp(__oper1, __oper2) < 0;
 }
 
 /**
  * <library>float</library>
  */
-stock bool:operator<(Float:oper1, oper2)
+/*
+native bool:operator<(Float:oper1, oper2);
+*/
+stock bool:operator<(Float:__oper1, __oper2)
 {
-	return floatcmp(oper1, float(oper2)) < 0;
+	return floatcmp(__oper1, float(__oper2)) < 0;
 }
 
 /**
  * <library>float</library>
  */
-stock bool:operator<(oper1, Float:oper2)
+/*
+native bool:operator<(oper1, Float:oper2);
+*/
+stock bool:operator<(__oper1, Float:__oper2)
 {
-	return floatcmp(float(oper1), oper2) < 0;
+	return floatcmp(float(__oper1), __oper2) < 0;
 }
 
 /**
  * <library>float</library>
  */
-stock bool:operator<=(Float:oper1, Float:oper2)
+/*
+native bool:operator<=(Float:oper1, Float:oper2);
+*/
+stock bool:operator<=(Float:__oper1, Float:__oper2)
 {
-	return floatcmp(oper1, oper2) <= 0;
+	return floatcmp(__oper1, __oper2) <= 0;
 }
 
 /**
  * <library>float</library>
  */
-stock bool:operator<=(Float:oper1, oper2)
+/*
+native bool:operator<=(Float:oper1, oper2);
+*/
+stock bool:operator<=(Float:__oper1, __oper2)
 {
-	return floatcmp(oper1, float(oper2)) <= 0;
+	return floatcmp(__oper1, float(__oper2)) <= 0;
 }
 
 /**
  * <library>float</library>
  */
-stock bool:operator<=(oper1, Float:oper2)
+/*
+native bool:operator<=(oper1, Float:oper2);
+*/
+stock bool:operator<=(__oper1, Float:__oper2)
 {
-	return floatcmp(float(oper1), oper2) <= 0;
+	return floatcmp(float(__oper1), __oper2) <= 0;
 }
 
 /**
  * <library>float</library>
  */
-stock bool:operator!(Float:oper)
+/*
+native bool:operator!(Float:oper);
+*/
+stock bool:operator!(Float:__oper)
 {
-	return (_:oper & cellmax) == 0;
+	return (_:__oper & cellmax) == 0;
 }
 
 /* forbidden operations */

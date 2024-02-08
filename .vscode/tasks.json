@@ -22,7 +22,10 @@
           "panel": "dedicated"
         },
         
-        "problemMatcher": "$pawncc"
+        "problemMatcher": {
+          "base": "$pawncc",
+          "fileLocation": ["autoDetect", "${workspaceFolder}\\gamemodes"]
+        }
       }
     ]
   }

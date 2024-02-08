@@ -20,6 +20,8 @@ enum e_USER
     time,
     weather,
 
+    locationID,
+
     bool:isLogged,
     bool:isAfk,
 };

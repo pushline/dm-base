@@ -26,29 +26,29 @@ iniciarServidor()
 forward OnScriptUpdate();
 public OnScriptUpdate()
 {
-	new strm[256];
+	new strm[512];
 
 	arenaInfo[roundMints]--;
 
 	if(arenaInfo[roundMints] < 0)
-  {
-    new nextArena = determineArenaID();
-    printf("nextArena %d", nextArena);
+	{
+		new nextArena = determineArenaID();
 
-    foreach(new i : Player)
+		foreach(new i : Player)
 		{
 			format(strm, sizeof(strm), ARENA_ENDED_MSG,
-              arenaData[arenaInfo[arenaId]][arenaName],
-              arenaInfo[arenaId],
-              arenaData[nextArena][arenaName],
-              nextArena
-            );
+				arenaData[arenaInfo[arenaId]][arenaName],
+				arenaInfo[arenaId],
+				arenaData[nextArena][arenaName],
+				nextArena
+			);
+
 			SendClientMessage(i, -1, strm);
 			ZoneNumberStopFlashForAll(arenaInfo[arenaId]);
 		}
 
-    arenaInfo[arenaId] = nextArena;
-		//PrepareChangeArena();
+		arenaInfo[arenaId] = nextArena;
+		//	PrepareChangeArena();
 	}
 
 	foreach(new i : Player)
@@ -159,7 +159,7 @@ setAfk(playerid)
   return 1;
 }
 
-Respawn(playerid, timestamp)
+stock Respawn(playerid, timestamp)
 {
   timestamp = 0;
   if(User[playerid][adminLevel] >= 4)
@@ -170,10 +170,10 @@ Respawn(playerid, timestamp)
   }
 
   if(User[playerid][timerRespawn] > timestamp)
-    SendClientMessage(playerid, -1, "DEBUG");
+    SendClientMessage(playerid, -1, "NÃO PODE RESPAWNAR AINDA");
 
   if(User[playerid][isAfk])
-    SendClientMessage(playerid, -1, "DEBUG");
+    SendClientMessage(playerid, -1, "VOCÊ ESTÁ AFK");
 
   new Float:Armour;
   GetPlayerArmour(playerid, Armour);
@@ -189,7 +189,7 @@ Respawn(playerid, timestamp)
   return true;
 }
 
-SpawnPlayerEx(playerid)
+stock SpawnPlayerEx(playerid)
 {
   if(IsPlayerInAnyVehicle(playerid))
     RemovePlayerFromVehicle(playerid);
@@ -222,4 +222,30 @@ updatePlayerHud(playerid)
 {
   SetPlayerVirtualWorld(playerid, 999); // workaround
   return 1;
+}
+
+
+SpawnPlayerOnArena(playerid)
+{
+	if(IsPlayerInAnyVehicle(playerid))
+    RemovePlayerFromVehicle(playerid);
+
+	new currentArena = arenaInfo[arenaId];
+	new Float:posX, Float:posY, Float:posZ, modelid, i;
+
+	do
+	{
+		posX = RandomFloat(arenaData[currentArena][arenaPos][0], arenaData[currentArena][arenaPos][2]);
+		posY = RandomFloat(arenaData[currentArena][arenaPos][1], arenaData[currentArena][arenaPos][3]);
+		modelid = CA_RayCastLine(posX, posY, 700.0, posX, posY, -1000.0, posX, posY, posZ);
+
+		i ++;
+	} while ((modelid == WATER_OBJECT || IsModelBuilding(modelid)) && i != 10);
+
+	SetPlayerPos(playerid, posX, posY, posZ + 1.0);
+	SetPlayerFacingAngle(playerid, posZ);
+	SetCameraBehindPlayer(playerid);
+
+	return true;
+
 }
