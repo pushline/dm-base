@@ -3,3 +3,5 @@
 *.md
 *.git
 *.pdb
+log.txt
+logs/*
