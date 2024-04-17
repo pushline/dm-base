@@ -1,0 +1,372 @@
+Starting open.mp server (1.2.0.2670) from commit 41ebf182bf73dc9cb11841bfe6b0179ba31f9dd5
+Loading component Actors.dll
+	Successfully loaded component Actors (1.2.0.2670) with UID c81ca021eae2ad5c
+Loading component Checkpoints.dll
+	Successfully loaded component Checkpoints (1.2.0.2670) with UID 44a937350d611dde
+Loading component Classes.dll
+	Successfully loaded component Classes (1.2.0.2670) with UID 8cfb3183976da208
+Loading component Console.dll
+	Successfully loaded component Console (1.2.0.2670) with UID bfa24e49d0c95ee4
+Loading component CustomModels.dll
+	Successfully loaded component CustomModels (1.2.0.2670) with UID 15e3cb1e7c77ffff
+Loading component Databases.dll
+	Successfully loaded component Databases (1.2.0.2670) with UID 80092e7eb5821a96
+Loading component Dialogs.dll
+	Successfully loaded component Dialogs (1.2.0.2670) with UID 44a111350d611dde
+Loading component GangZones.dll
+	Successfully loaded component GangZones (1.2.0.2670) with UID b3351d11ee8d8056
+Loading component LegacyConfig.dll
+	Successfully loaded component LegacyConfig (1.2.0.2670) with UID 24ef6216838f9ffc
+Loading component LegacyNetwork.dll
+	Successfully loaded component RakNetLegacyNetwork (1.2.0.2670) with UID ea9799fd79cf8442
+Loading component Menus.dll
+	Successfully loaded component Menus (1.2.0.2670) with UID 621e219eb97ee0b2
+Loading component Objects.dll
+	Successfully loaded component Objects (1.2.0.2670) with UID 59f8415f72da6160
+Loading component Pawn.dll
+	Successfully loaded component Pawn (1.2.0.2670) with UID 78906cd9f19c36a6
+Loading component Pickups.dll
+	Successfully loaded component Pickups (1.2.0.2670) with UID cf304faa363dd971
+Loading component Recordings.dll
+	Successfully loaded component Recordings (1.2.0.2670) with UID 871144d399f5f613
+Loading component sscanf.dll
+	Successfully loaded component sscanf (2.13.8.0) with UID a1e7c01e55caa1f2
+Loading component TextDraws.dll
+	Successfully loaded component TextDraws (1.2.0.2670) with UID 9b5dc2b1d15c992a
+Loading component TextLabels.dll
+	Successfully loaded component TextLabels (1.2.0.2670) with UID a0c57ea80a009742
+Loading component Timers.dll
+	Successfully loaded component Timers (1.2.0.2670) with UID 2ad8124c5ea257a3
+Loading component Unicode.dll
+	Successfully loaded component Unicode (1.2.0.2670) with UID 8ffb446f8353922b
+Loading component Variables.dll
+	Successfully loaded component Variables (1.2.0.2670) with UID 75e121848bc01fa2
+Loading component Vehicles.dll
+	Successfully loaded component Vehicles (1.2.0.2670) with UID 3f1f62ee9e22ab19
+Loaded 22 component(s) from C:\Users\Pichau\Desktop\dm-base-main\components
+[2024-04-17T14:01:52-0300] [Info] 
+[2024-04-17T14:01:52-0300] [Info]  ===============================
+[2024-04-17T14:01:52-0300] [Info] 
+[2024-04-17T14:01:52-0300] [Info]      sscanf component loaded.   
+[2024-04-17T14:01:52-0300] [Info] 
+[2024-04-17T14:01:52-0300] [Info]          Version: 2.13.8
+[2024-04-17T14:01:52-0300] [Info] 
+[2024-04-17T14:01:52-0300] [Info]    (c) 2022 Alex "Y_Less" Cole  
+[2024-04-17T14:01:52-0300] [Info] 
+[2024-04-17T14:01:52-0300] [Info]  ===============================
+[2024-04-17T14:01:52-0300] [Info] 
+[2024-04-17T14:01:52-0300] [Info] Loading plugin: ColAndreas
+[2024-04-17T14:01:52-0300] [Info] *********************
+[2024-04-17T14:01:52-0300] [Info] ** Created By:     **
+[2024-04-17T14:01:52-0300] [Info] ** [uL]Chris42O    **
+[2024-04-17T14:01:52-0300] [Info] ** [uL]Slice       **
+[2024-04-17T14:01:52-0300] [Info] ** [uL]Pottus      **
+[2024-04-17T14:01:52-0300] [Info] *********************
+[2024-04-17T14:01:54-0300] [Info] Loaded collision data.
+[2024-04-17T14:01:54-0300] [Info] *********************
+[2024-04-17T14:01:54-0300] [Info]   ColAndreas Loaded
+[2024-04-17T14:01:54-0300] [Info]    v1.4.0
+[2024-04-17T14:01:54-0300] [Info] *********************
+[2024-04-17T14:01:54-0300] [Info] Loading plugin: crashdetect
+[2024-04-17T14:01:54-0300] [Info]   CrashDetect plugin 4.21
+[2024-04-17T14:01:54-0300] [Info] Loading plugin: mysql
+[2024-04-17T14:01:54-0300] [Info] Could not load plugin:
+Não foi possível encontrar o módulo especificado.
+[2024-04-17T14:01:54-0300] [Info] Loading plugin: samp_bcrypt
+[2024-04-17T14:01:54-0300] [Info] [SampBcrypt] [info]: Version: 0.4.0
+[2024-04-17T14:01:54-0300] [Info] Loading plugin: streamer
+[2024-04-17T14:01:54-0300] [Info] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[2024-04-17T14:01:54-0300] [Error] Function not registered: mysql_close
+[2024-04-17T14:01:54-0300] [Error] Function not registered: mysql_log
+[2024-04-17T14:01:54-0300] [Error] Function not registered: cache_get_value_name_int
+[2024-04-17T14:01:54-0300] [Error] Function not registered: mysql_errno
+[2024-04-17T14:01:54-0300] [Error] Function not registered: mysql_connect
+[2024-04-17T14:01:54-0300] [Error] Function not registered: cache_insert_id
+[2024-04-17T14:01:54-0300] [Error] Function not registered: mysql_tquery
+[2024-04-17T14:01:54-0300] [Error] Function not registered: cache_delete
+[2024-04-17T14:01:54-0300] [Error] Function not registered: cache_get_value_name
+[2024-04-17T14:01:54-0300] [Error] Function not registered: mysql_query
+[2024-04-17T14:01:54-0300] [Error] Function not registered: mysql_format
+[2024-04-17T14:01:54-0300] [Error] Function not registered: PR_SendPacket
+[2024-04-17T14:01:54-0300] [Error] Function not registered: BS_Delete
+[2024-04-17T14:01:54-0300] [Error] Function not registered: PR_SendRPC
+[2024-04-17T14:01:54-0300] [Error] Function not registered: BS_New
+[2024-04-17T14:01:54-0300] [Error] Function not registered: BS_SetWriteOffset
+[2024-04-17T14:01:54-0300] [Error] Function not registered: BS_IgnoreBits
+[2024-04-17T14:01:54-0300] [Error] Function not registered: PR_RegHandler
+[2024-04-17T14:01:54-0300] [Error] Function not registered: PR_Init
+[2024-04-17T14:01:54-0300] [Error] Function not registered: BS_WriteValue
+[2024-04-17T14:01:54-0300] [Error] Function not registered: BS_ReadValue
+[2024-04-17T14:01:54-0300] [Error] Function not registered: cache_get_row_count
+[2024-04-17T14:01:54-0300] [Info] [debug] Run time error 19: "File or function is not found"
+[2024-04-17T14:01:54-0300] [Info] [debug]  cache_get_row_count
+[2024-04-17T14:01:54-0300] [Info] [debug]  BS_ReadValue
+[2024-04-17T14:01:54-0300] [Info] [debug]  BS_WriteValue
+[2024-04-17T14:01:54-0300] [Info] [debug]  PR_Init
+[2024-04-17T14:01:54-0300] [Info] [debug]  PR_RegHandler
+[2024-04-17T14:01:54-0300] [Info] [debug]  BS_IgnoreBits
+[2024-04-17T14:01:54-0300] [Info] [debug]  BS_SetWriteOffset
+[2024-04-17T14:01:54-0300] [Info] [debug]  BS_New
+[2024-04-17T14:01:54-0300] [Info] [debug]  PR_SendRPC
+[2024-04-17T14:01:54-0300] [Info] [debug]  BS_Delete
+[2024-04-17T14:01:54-0300] [Info] [debug]  PR_SendPacket
+[2024-04-17T14:01:54-0300] [Info] [debug]  mysql_format
+[2024-04-17T14:01:54-0300] [Info] [debug]  mysql_query
+[2024-04-17T14:01:54-0300] [Info] [debug]  cache_get_value_name
+[2024-04-17T14:01:54-0300] [Info] [debug]  cache_delete
+[2024-04-17T14:01:54-0300] [Info] [debug]  mysql_tquery
+[2024-04-17T14:01:54-0300] [Info] [debug]  cache_insert_id
+[2024-04-17T14:01:54-0300] [Info] [debug]  mysql_connect
+[2024-04-17T14:01:54-0300] [Info] [debug]  mysql_errno
+[2024-04-17T14:01:54-0300] [Info] [debug]  cache_get_value_name_int
+[2024-04-17T14:01:54-0300] [Info] [debug]  mysql_log
+[2024-04-17T14:01:54-0300] [Info] [debug]  mysql_close
+[2024-04-17T14:01:54-0300] [Error] File or function is not found
+[2024-04-17T14:01:54-0300] [Info] [debug] Run time error 19: "File or function is not found"
+[2024-04-17T14:01:54-0300] [Info] [debug]  cache_get_row_count
+[2024-04-17T14:01:54-0300] [Info] [debug]  BS_ReadValue
+[2024-04-17T14:01:54-0300] [Info] [debug]  BS_WriteValue
+[2024-04-17T14:01:54-0300] [Info] [debug]  PR_Init
+[2024-04-17T14:01:54-0300] [Info] [debug]  PR_RegHandler
+[2024-04-17T14:01:54-0300] [Info] [debug]  BS_IgnoreBits
+[2024-04-17T14:01:54-0300] [Info] [debug]  BS_SetWriteOffset
+[2024-04-17T14:01:54-0300] [Info] [debug]  BS_New
+[2024-04-17T14:01:54-0300] [Info] [debug]  PR_SendRPC
+[2024-04-17T14:01:54-0300] [Info] [debug]  BS_Delete
+[2024-04-17T14:01:54-0300] [Info] [debug]  PR_SendPacket
+[2024-04-17T14:01:54-0300] [Info] [debug]  mysql_format
+[2024-04-17T14:01:54-0300] [Info] [debug]  mysql_query
+[2024-04-17T14:01:54-0300] [Info] [debug]  cache_get_value_name
+[2024-04-17T14:01:54-0300] [Info] [debug]  cache_delete
+[2024-04-17T14:01:54-0300] [Info] [debug]  mysql_tquery
+[2024-04-17T14:01:54-0300] [Info] [debug]  cache_insert_id
+[2024-04-17T14:01:54-0300] [Info] [debug]  mysql_connect
+[2024-04-17T14:01:54-0300] [Info] [debug]  mysql_errno
+[2024-04-17T14:01:54-0300] [Info] [debug]  cache_get_value_name_int
+[2024-04-17T14:01:54-0300] [Info] [debug]  mysql_log
+[2024-04-17T14:01:54-0300] [Info] [debug]  mysql_close
+[2024-04-17T14:01:54-0300] [Info] Legacy Network started on port 7777
+[2024-04-17T14:02:04-0300] [Info] Couldn't announce legacy network to open.mp list.
+[2024-04-17T14:02:04-0300] [Info] 	[Server Error] Status: 406
+[2024-04-17T14:02:04-0300] [Info] 	[Server Error] Message: {"error":"failed to query server: socket read timed out"}
+[2024-04-17T14:02:04-0300] [Info] This won't affect the server's behaviour.
+[2024-04-17T14:03:06-0300] [Info] [debug] Run time error 19: "File or function is not found"
+[2024-04-17T14:03:06-0300] [Info] [debug]  cache_get_row_count
+[2024-04-17T14:03:06-0300] [Info] [debug]  BS_ReadValue
+[2024-04-17T14:03:06-0300] [Info] [debug]  BS_WriteValue
+[2024-04-17T14:03:06-0300] [Info] [debug]  PR_Init
+[2024-04-17T14:03:06-0300] [Info] [debug]  PR_RegHandler
+[2024-04-17T14:03:06-0300] [Info] [debug]  BS_IgnoreBits
+[2024-04-17T14:03:06-0300] [Info] [debug]  BS_SetWriteOffset
+[2024-04-17T14:03:06-0300] [Info] [debug]  BS_New
+[2024-04-17T14:03:06-0300] [Info] [debug]  PR_SendRPC
+[2024-04-17T14:03:06-0300] [Info] [debug]  BS_Delete
+[2024-04-17T14:03:06-0300] [Info] [debug]  PR_SendPacket
+[2024-04-17T14:03:06-0300] [Info] [debug]  mysql_format
+[2024-04-17T14:03:06-0300] [Info] [debug]  mysql_query
+[2024-04-17T14:03:06-0300] [Info] [debug]  cache_get_value_name
+[2024-04-17T14:03:06-0300] [Info] [debug]  cache_delete
+[2024-04-17T14:03:06-0300] [Info] [debug]  mysql_tquery
+[2024-04-17T14:03:06-0300] [Info] [debug]  cache_insert_id
+[2024-04-17T14:03:06-0300] [Info] [debug]  mysql_connect
+[2024-04-17T14:03:06-0300] [Info] [debug]  mysql_errno
+[2024-04-17T14:03:06-0300] [Info] [debug]  cache_get_value_name_int
+[2024-04-17T14:03:06-0300] [Info] [debug]  mysql_log
+[2024-04-17T14:03:06-0300] [Info] [debug]  mysql_close
+[2024-04-17T14:03:06-0300] [Error] File or function is not found
+[2024-04-17T14:03:06-0300] [Info] 
+
+*** Streamer Plugin v2.9.6 by Incognito unloaded ***
+
+[2024-04-17T14:03:06-0300] [Info] *********************
+[2024-04-17T14:03:06-0300] [Info] *ColAndreas Unloaded*
+[2024-04-17T14:03:06-0300] [Info] *********************
+[2024-04-17T14:03:06-0300] [Info] 
+[2024-04-17T14:03:06-0300] [Info]  ===============================
+[2024-04-17T14:03:06-0300] [Info] 
+[2024-04-17T14:03:06-0300] [Info]     sscanf component unloaded.  
+[2024-04-17T14:03:06-0300] [Info] 
+[2024-04-17T14:03:06-0300] [Info]  ===============================
+[2024-04-17T14:03:06-0300] [Info] 
+Starting open.mp server (1.2.0.2670) from commit 41ebf182bf73dc9cb11841bfe6b0179ba31f9dd5
+Loading component Actors.dll
+	Successfully loaded component Actors (1.2.0.2670) with UID c81ca021eae2ad5c
+Loading component Checkpoints.dll
+	Successfully loaded component Checkpoints (1.2.0.2670) with UID 44a937350d611dde
+Loading component Classes.dll
+	Successfully loaded component Classes (1.2.0.2670) with UID 8cfb3183976da208
+Loading component Console.dll
+	Successfully loaded component Console (1.2.0.2670) with UID bfa24e49d0c95ee4
+Loading component CustomModels.dll
+	Successfully loaded component CustomModels (1.2.0.2670) with UID 15e3cb1e7c77ffff
+Loading component Databases.dll
+	Successfully loaded component Databases (1.2.0.2670) with UID 80092e7eb5821a96
+Loading component Dialogs.dll
+	Successfully loaded component Dialogs (1.2.0.2670) with UID 44a111350d611dde
+Loading component GangZones.dll
+	Successfully loaded component GangZones (1.2.0.2670) with UID b3351d11ee8d8056
+Loading component LegacyConfig.dll
+	Successfully loaded component LegacyConfig (1.2.0.2670) with UID 24ef6216838f9ffc
+Loading component LegacyNetwork.dll
+	Successfully loaded component RakNetLegacyNetwork (1.2.0.2670) with UID ea9799fd79cf8442
+Loading component Menus.dll
+	Successfully loaded component Menus (1.2.0.2670) with UID 621e219eb97ee0b2
+Loading component Objects.dll
+	Successfully loaded component Objects (1.2.0.2670) with UID 59f8415f72da6160
+Loading component Pawn.dll
+	Successfully loaded component Pawn (1.2.0.2670) with UID 78906cd9f19c36a6
+Loading component pawnraknet.dll
+	Successfully loaded component Pawn.RakNet (0.1.6.0) with UID 4a8b15c16d23e42f
+Loading component Pickups.dll
+	Successfully loaded component Pickups (1.2.0.2670) with UID cf304faa363dd971
+Loading component Recordings.dll
+	Successfully loaded component Recordings (1.2.0.2670) with UID 871144d399f5f613
+Loading component sscanf.dll
+	Successfully loaded component sscanf (2.13.8.0) with UID a1e7c01e55caa1f2
+Loading component TextDraws.dll
+	Successfully loaded component TextDraws (1.2.0.2670) with UID 9b5dc2b1d15c992a
+Loading component TextLabels.dll
+	Successfully loaded component TextLabels (1.2.0.2670) with UID a0c57ea80a009742
+Loading component Timers.dll
+	Successfully loaded component Timers (1.2.0.2670) with UID 2ad8124c5ea257a3
+Loading component Unicode.dll
+	Successfully loaded component Unicode (1.2.0.2670) with UID 8ffb446f8353922b
+Loading component Variables.dll
+	Successfully loaded component Variables (1.2.0.2670) with UID 75e121848bc01fa2
+Loading component Vehicles.dll
+	Successfully loaded component Vehicles (1.2.0.2670) with UID 3f1f62ee9e22ab19
+Loaded 23 component(s) from C:\Users\Pichau\Desktop\dm-base-main\components
+[2024-04-17T14:03:07-0300] [Info] 
+[2024-04-17T14:03:07-0300] [Info]  ===============================
+[2024-04-17T14:03:07-0300] [Info] 
+[2024-04-17T14:03:07-0300] [Info]      sscanf component loaded.   
+[2024-04-17T14:03:07-0300] [Info] 
+[2024-04-17T14:03:07-0300] [Info]          Version: 2.13.8
+[2024-04-17T14:03:07-0300] [Info] 
+[2024-04-17T14:03:07-0300] [Info]    (c) 2022 Alex "Y_Less" Cole  
+[2024-04-17T14:03:07-0300] [Info] 
+[2024-04-17T14:03:07-0300] [Info]  ===============================
+[2024-04-17T14:03:07-0300] [Info] 
+[2024-04-17T14:03:07-0300] [Info] [Pawn.RakNet] plugin v1.6.0 loading...
+[2024-04-17T14:03:07-0300] [Info] [Pawn.RakNet] 
+
+    | Pawn.RakNet 1.6.0 | open.mp | 2016 - 2023
+    |--------------------------------------------
+    | Author and maintainer: katursis
+
+
+    | Compiled: Feb 12 2023 at 16:51:14
+    |--------------------------------------------------------------
+    | Repository: https://github.com/katursis/Pawn.RakNet/tree/omp
+    |--------------------------------------------------------------
+    | Wiki: https://github.com/katursis/Pawn.RakNet/wiki
+
+[2024-04-17T14:03:07-0300] [Info] Loading plugin: ColAndreas
+[2024-04-17T14:03:07-0300] [Info] *********************
+[2024-04-17T14:03:07-0300] [Info] ** Created By:     **
+[2024-04-17T14:03:07-0300] [Info] ** [uL]Chris42O    **
+[2024-04-17T14:03:07-0300] [Info] ** [uL]Slice       **
+[2024-04-17T14:03:07-0300] [Info] ** [uL]Pottus      **
+[2024-04-17T14:03:07-0300] [Info] *********************
+[2024-04-17T14:03:09-0300] [Info] Loaded collision data.
+[2024-04-17T14:03:09-0300] [Info] *********************
+[2024-04-17T14:03:09-0300] [Info]   ColAndreas Loaded
+[2024-04-17T14:03:09-0300] [Info]    v1.4.0
+[2024-04-17T14:03:09-0300] [Info] *********************
+[2024-04-17T14:03:09-0300] [Info] Loading plugin: crashdetect
+[2024-04-17T14:03:09-0300] [Info]   CrashDetect plugin 4.21
+[2024-04-17T14:03:09-0300] [Info] Loading plugin: mysql
+[2024-04-17T14:03:09-0300] [Info]  >> plugin.mysql: R41-4 successfully loaded.
+[2024-04-17T14:03:09-0300] [Info] Loading plugin: samp_bcrypt
+[2024-04-17T14:03:09-0300] [Info] [SampBcrypt] [info]: Version: 0.4.0
+[2024-04-17T14:03:09-0300] [Info] Loading plugin: streamer
+[2024-04-17T14:03:09-0300] [Info] 
+
+*** Streamer Plugin v2.9.6 by Incognito loaded ***
+
+[2024-04-17T14:03:09-0300] [Info]  
+[2024-04-17T14:03:09-0300] [Info]  
+[2024-04-17T14:03:09-0300] [Info]          ==============================================================
+[2024-04-17T14:03:09-0300] [Info]          |                                                            |
+[2024-04-17T14:03:09-0300] [Info]          |                                                            |
+[2024-04-17T14:03:09-0300] [Info]          |    YYYYYYY       YYYYYYY    SSSSSSSSSSSSSSS  IIIIIIIIII    |
+[2024-04-17T14:03:09-0300] [Info]          |    Y:::::Y       Y:::::Y  SS:::::::::::::::S I::::::::I    |
+[2024-04-17T14:03:09-0300] [Info]          |    Y:::::Y       Y:::::Y S:::::SSSSSS::::::S I::::::::I    |
+[2024-04-17T14:03:09-0300] [Info]          |    Y::::::Y     Y::::::Y S:::::S     SSSSSSS II::::::II    |
+[2024-04-17T14:03:09-0300] [Info]          |    YYY:::::Y   Y:::::YYY S:::::S               I::::I      |
+[2024-04-17T14:03:09-0300] [Info]          |       Y:::::Y Y:::::Y    S:::::S               I::::I      |
+[2024-04-17T14:03:09-0300] [Info]          |        Y:::::Y:::::Y      S::::SSSS            I::::I      |
+[2024-04-17T14:03:09-0300] [Info]          |         Y:::::::::Y        SS::::::SSSSS       I::::I      |
+[2024-04-17T14:03:09-0300] [Info]          |          Y:::::::Y           SSS::::::::SS     I::::I      |
+[2024-04-17T14:03:09-0300] [Info]          |           Y:::::Y               SSSSSS::::S    I::::I      |
+[2024-04-17T14:03:09-0300] [Info]          |           Y:::::Y                    S:::::S   I::::I      |
+[2024-04-17T14:03:09-0300] [Info]          |           Y:::::Y                    S:::::S   I::::I      |
+[2024-04-17T14:03:09-0300] [Info]          |           Y:::::Y        SSSSSSS     S:::::S II::::::II    |
+[2024-04-17T14:03:09-0300] [Info]          |        YYYY:::::YYYY     S::::::SSSSSS:::::S I::::::::I    |
+[2024-04-17T14:03:09-0300] [Info]          |        Y:::::::::::Y     S:::::::::::::::SS  I::::::::I    |
+[2024-04-17T14:03:09-0300] [Info]          |        YYYYYYYYYYYYY      SSSSSSSSSSSSSSS    IIIIIIIIII    |
+[2024-04-17T14:03:09-0300] [Info]          |                                                            |
+[2024-04-17T14:03:09-0300] [Info]          |                                                            |
+[2024-04-17T14:03:09-0300] [Info]          |                      (c) 2021 MPL v1.1                     |
+[2024-04-17T14:03:09-0300] [Info]          |            Alex "Y_Less" Cole and contributors.            |
+[2024-04-17T14:03:09-0300] [Info]          |                                                            |
+[2024-04-17T14:03:09-0300] [Info]          |                                                            |
+[2024-04-17T14:03:09-0300] [Info]          ==============================================================
+[2024-04-17T14:03:09-0300] [Info]  
+[2024-04-17T14:03:09-0300] [Info]  
+[2024-04-17T14:03:09-0300] [Info]  ========================================== 
+[2024-04-17T14:03:09-0300] [Info]  |                                        | 
+[2024-04-17T14:03:09-0300] [Info]  |   Generating code, this may take a     | 
+[2024-04-17T14:03:09-0300] [Info]  |  little bit of time.  Note that this   | 
+[2024-04-17T14:03:09-0300] [Info]  |  code generation works best with the   | 
+[2024-04-17T14:03:09-0300] [Info]  |     JIT plugin, which you are not      | 
+[2024-04-17T14:03:09-0300] [Info]  |     currently using.  Get it here:     | 
+[2024-04-17T14:03:09-0300] [Info]  |                                        | 
+[2024-04-17T14:03:09-0300] [Info]  |       https://git.io/jit-plugin        | 
+[2024-04-17T14:03:09-0300] [Info]  |                                        | 
+[2024-04-17T14:03:09-0300] [Info]  |             Please wait...             | 
+[2024-04-17T14:03:10-0300] [Info]  |                                        | 
+[2024-04-17T14:03:10-0300] [Info]  |             Done in 118ms!             | 
+[2024-04-17T14:03:10-0300] [Info]  |                                        | 
+[2024-04-17T14:03:10-0300] [Info]  ========================================== 
+[2024-04-17T14:03:10-0300] [Info] *** YSI Info: Script ID: 1
+[2024-04-17T14:03:10-0300] [Info]  |                                        | 
+[2024-04-17T14:03:10-0300] [Info]  | Server:      open.mp 1.2.0.2670 (W)    | 
+[2024-04-17T14:03:10-0300] [Info]  | Started:     17 Apr 2024 - 14:03:09    | 
+[2024-04-17T14:03:10-0300] [Info]  |                                        | 
+[2024-04-17T14:03:10-0300] [Info]  | Compiler:    3.10.11 (Windows)         | 
+[2024-04-17T14:03:10-0300] [Info]  | Includes:    open.mp v037030           | 
+[2024-04-17T14:03:10-0300] [Info]  | Codepage:    <none>                    | 
+[2024-04-17T14:03:10-0300] [Info]  | Built:       17 Apr 2024 - 14:01:45    | 
+[2024-04-17T14:03:10-0300] [Info]  |                                        | 
+[2024-04-17T14:03:10-0300] [Info]  | YSI:         v05.08.4329               | 
+[2024-04-17T14:03:10-0300] [Info]  | Master:      1                         | 
+[2024-04-17T14:03:10-0300] [Info]  |                                        | 
+[2024-04-17T14:03:10-0300] [Info]  | JIT:         <none>                    | 
+[2024-04-17T14:03:10-0300] [Info]  | Crashdetect: <found>                   | 
+[2024-04-17T14:03:10-0300] [Info]  |                                        | 
+[2024-04-17T14:03:10-0300] [Info]  ========================================== 
+[2024-04-17T14:03:10-0300] [Info]  
+[2024-04-17T14:03:10-0300] [Info] [debug] Long callback execution detected (hang or performance issue)
+[2024-04-17T14:03:10-0300] [Info] [debug] AMX backtrace:
+[2024-04-17T14:03:10-0300] [Info] [debug] #0 0000b520 in ?? (0, 55, 18586748, 1598650688) in <unknown>
+[2024-04-17T14:03:10-0300] [Info] [debug] #1 0000b658 in ?? (0, 0, 18586780, 1598650688) in <unknown>
+[2024-04-17T14:03:10-0300] [Info] [debug] #2 00010480 in ?? () in <unknown>
+[2024-04-17T14:03:10-0300] [Info] [debug] #3 000083a0 in ?? () in <unknown>
+[2024-04-17T14:03:10-0300] [Info] [debug] #4 00005cdc in ?? () in <unknown>
+[2024-04-17T14:03:10-0300] [Info] [debug] #5 0000232c in public OnPlayerTakeDamage () in <unknown>
+[2024-04-17T14:03:10-0300] [Info]  
+[2024-04-17T14:03:10-0300] [Info] MySQL conectou.
+[2024-04-17T14:03:10-0300] [Warning] Gangzone Y co-ordinates -1211.00 and -1218.00 out of order, inverting.
+[2024-04-17T14:03:10-0300] [Info] arenaInfo[arenaId] 29
+[2024-04-17T14:03:10-0300] [Info] base dm v1.0 - by pushline
+[2024-04-17T14:03:10-0300] [Info] Legacy Network started on port 7777
+[2024-04-17T14:03:18-0300] [Info] [Pawn.RakNet] plugin unloaded
+[2024-04-17T14:03:18-0300] [Info] 
+
+*** Streamer Plugin v2.9.6 by Incognito unloaded ***
+
+[2024-04-17T14:03:18-0300] [Info] plugin.mysql: Unloading plugin...

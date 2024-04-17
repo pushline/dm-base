@@ -90,8 +90,8 @@
   },
   "password": "",
   "pawn": {
-    "legacy_plugins": [],
-    "main_scripts": ["gungame 1"],
+    "legacy_plugins": ["ColAndreas", "crashdetect", "mysql", "samp_bcrypt", "streamer"],
+    "main_scripts": ["base 1"],
     "side_scripts": []
   },
 
